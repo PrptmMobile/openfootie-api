@@ -1,0 +1,77 @@
+#Ranking, Name, Nation, Value, shortName
+{1,Real Madrid,Spain}
+{2,Barcelona,Spain}
+{3,Bayern Munich,Germany,nativeName:Bayern München}
+{4,Chelsea,England}
+{5,Benfica,Portugal}
+{6,Manchester United,England}
+{7,Atletico Madrid,Spain}
+{8,Valencia,Spain}
+{9,Arsenal,England}
+{10,Porto,Portugal}
+{11,Milan,Italy}
+{12,Lyon,France}
+{13,Inter Milan,Italy}
+{14,Schalke,Germany}
+{15,Dortmund,Germany}
+{16,Juventus,Italy}
+{17,PSG,France} 
+{18,Shakhtar Donetsk,Ukraine}
+{19,Tottenham,England}
+{20,Basel,Switzerland}
+{21,Zenit,Russia} 
+{22,Manchester City,England} 
+{23,Seville,Spain,nativeName:Sevilla} 
+{24,Bayer Leverkusen,Germany} 
+{25,Marseille,France} 
+{26,Rubin Kazan,Russia} 
+{27,Olympiakos,Greece} 
+{28,CSKA Moscow,Russia,nativeName:CSKA Moskva} 
+{29,PSV,Netherlands} 
+{30,Ajax,Netherlands} 
+{31,Napoli,Italy} 
+{32,Liverpool,England} 
+{33,Sporting,Portugal} 
+{34,Dynamo Kiev,Ukraine,nativeName:Dynamo Kyiv} 
+{35,AZ,Netherlands} 
+{36,Galatasaray,Turkey} 
+{37,Athletic Club,Spain} 
+{38,Stuttgart,Germany} 
+{39,Villarreal,Spain} 
+{40,Braga,Portugal}  
+{41,Lazio,Italy} 
+{42,Bordeaux,France} 
+{43,Twente,Netherlands} 
+{44,Anderlecht,Belgium} 
+{45,Fiorentina,Italy} 
+{46,Salzburg,Austria} 
+{47,Fulham,England} 
+{48,Metalist Kharkiv,Ukraine} 
+{49,Lille,France} 
+{50,Kopenhagen,Denmark,nativeName:København} 
+{51,Hannover,Germany} 
+{52,Malaga,Spain} 
+{53,Fenerbahce,Turkey} 
+{54,Viktoria Plzen,Czech Republic,nativeName:Viktoria Plzeň} 
+{55,Roma,Italy,value:216.83} 
+{56,Wolfsburg,Germany,value:152.20} 
+{57,Monaco,France,value:117.70} 
+{58,Newcastle,England,value:111.10} 
+{59,Spartak Moscow,Russia,value:103.80,nativeName:Spartak Moskva} 
+{60,Besiktas,Turkey,value:84.48} 
+{61,Dnipro Dnipropetrovsk,Ukraine,value:72.07} 
+{62,Hamburger,Germany,value:69.52} 
+{63,Celtic,Scotland,value:51.99} 
+{64,Standard Liege,Belgium,value:45.89,nativeName:Standard de Liège} 
+{65,Werder Bremen,Germany,value:45.28} 
+{66,Club Brugge,Belgium,value:41.76} 
+{67,Levante,Spain,value:38.28} 
+{68,Steaua Bucharest,Romania,value:37.75,nativeName:Steaua Bucureşti} 
+{69,Ludogorets,Bulgaria,value:36.52}
+{70,Genk,Belgium,value:34.19}
+{71,Real Betis,Spain,value:31.50} 
+{72,PAOK,Greece,value:27.54} 
+{73,APOEL,Cyprus,value:16.41} 
+{74,BATE,Belarus,value:15.93} 
+{75,Maribor,Slovenia,value:12.74}
+{76,Malmo,Sweden,value:10.76,nativeName:Malmö}

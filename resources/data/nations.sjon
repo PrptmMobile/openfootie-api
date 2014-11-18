@@ -1,0 +1,97 @@
+#Ranking, Name, Confederation
+{1,Germany,UEFA}
+{2,Argentina,CONMEBOL}
+{3,Netherlands,UEFA}
+{4,Colombia,CONMEBOL}
+{5,Brazil,CONMEBOL}
+{6,Belgium,UEFA}
+{7,France,UEFA}
+{8,Uruguay,CONMEBOL}
+{9,Chile,CONBEBOL}
+{10,Costa Rica,CONCACAF}
+{11,Mexico,CONCACAF} 
+{12,Portugal,UEFA} 
+{13,Croatia,UEFA} 
+{14,Italy,UEFA} 
+{15,Spain,UEFA} 
+{16,England,UEFA} 
+{17,Switzerland,UEFA} 
+{18,USA,CONCACAF} 
+{19,Algeria,CAF} 
+{20,Greece,UEFA} 
+{21,Ecuador,CONMEBOL} 
+{22,Bosnia-Herzegovina,UEFA,fullName:Bosnia and Herzegovina} 
+{23,Nigeria,CAF} 
+{24,Ivory Coast,CAF} 
+{25,Ghana,CAF} 
+{26,Iran,AFC} 
+{27,Japan,AFC} 
+{28,Cameroon,CAF} 
+{29,South Korea,AFC} 
+{30,Russia,UEFA} 
+{31,Australia,AFC} 
+{32,Honduras,CONCACAF} #
+{33,Ukraine,UEFA}
+{34,Czech Republic,UEFA}
+{35,Romania,UEFA}
+{36,Sweden,UEFA}
+{37,Slovakia,UEFA}
+{38,Serbia,UEFA}
+{39,Iceland,UEFA}
+{40,Peru,CONBEBOL}
+{41,Austria,UEFA}
+{42,Denmark,UEFA}
+{43,Slovenia,UEFA}
+{44,Scotland,UEFA}
+{45,Panama,CONCACAF}
+{46,Egypt,AFC}
+{47,Poland,UEFA}
+{48,Senegal,AFC}
+{49,Turkey,UEFA}
+{50,Israel,UEFA}
+{51,Hungary,UEFA}
+{52,South Africa,AFC}
+{53,Bulgaria,UEFA}
+{54,Ireland,UEFA}
+{55,Venezuela,CONMEBOL}
+{56,Finland,UEFA}
+{57,Paraguay,CONMEBOL}
+{58,Uzbekistan,AFC}
+{59,UAE,AFC}
+{60,Norway,UEFA}
+{61,New Zealand,OFC}
+{62,North Korea,AFC}
+{63,Bolivia,CONMEBOL}
+{64,Tunisia,AFC}
+{65,Cape Verde Islands,AFC}
+{66,Wales,UEFA}
+{67,Trinidad and Tobago,CONCACAF} 
+{68,Togo,CAF}
+{69,Northern Ireland,UEFA}
+{70,Albania,UEFA}
+{71,Guinea,CAF}
+{72,Angola,CAF}
+{74,Mali,CAF}
+{75,Congo DR,CAF}
+{76,Congo,CAF}
+{77,Montenegro,UEFA}
+{78,Gabon,CAF}
+{79,Antigua and Barbuda,CONCACAF}
+{80,Burkina Faso,CAF}
+{81,Guatemala,CONCACAF}
+{82,Libya,CAF}
+{83,Jordan,AFC}
+{84,Armenia,UEFA}
+{85,Sierra Leone,CAF}
+{86,Zambia,CAF}
+{87,Dominican Republic,CONCACAF}
+{88,Iraq,AFC}
+{89,El Salvador,CONCACAF}
+{90,Oman,AFC}
+{91,Uganda,CAF}
+{92,Benin,CAF}
+{93,Estonia,UEFA}
+{94,China,AFC}
+{95,Morocco,CAF}
+{96,Qatar,AFC}
+{97,Saudi Arabia,AFC}
