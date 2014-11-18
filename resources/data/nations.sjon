@@ -30,29 +30,29 @@
 {29,South Korea,AFC} 
 {30,Russia,UEFA} 
 {31,Australia,AFC} 
-{32,Honduras,CONCACAF} #
-{33,Ukraine,UEFA}
-{34,Czech Republic,UEFA}
-{35,Romania,UEFA}
-{36,Sweden,UEFA}
-{37,Slovakia,UEFA}
-{38,Serbia,UEFA}
-{39,Iceland,UEFA}
-{40,Peru,CONBEBOL}
-{41,Austria,UEFA}
-{42,Denmark,UEFA}
-{43,Slovenia,UEFA}
-{44,Scotland,UEFA}
-{45,Panama,CONCACAF}
-{46,Egypt,AFC}
-{47,Poland,UEFA}
-{48,Senegal,AFC}
-{49,Turkey,UEFA}
-{50,Israel,UEFA}
-{51,Hungary,UEFA}
-{52,South Africa,AFC}
-{53,Bulgaria,UEFA}
-{54,Ireland,UEFA}
+{32,Honduras,CONCACAF} 
+{33,Ukraine,UEFA} 
+{34,Czech Republic,UEFA} 
+{35,Romania,UEFA} 
+{36,Sweden,UEFA} 
+{37,Slovakia,UEFA} 
+{38,Serbia,UEFA} 
+{39,Iceland,UEFA} 
+{40,Peru,CONBEBOL} 
+{41,Austria,UEFA} 
+{42,Denmark,UEFA} 
+{43,Slovenia,UEFA} 
+{44,Scotland,UEFA} 
+{45,Panama,CONCACAF} 
+{46,Egypt,CAF} 
+{47,Poland,UEFA} 
+{48,Senegal,CAF} 
+{49,Turkey,UEFA} 
+{50,Israel,UEFA} 
+{51,Hungary,UEFA} 
+{52,South Africa,CAF} 
+{53,Bulgaria,UEFA} 
+{54,Ireland,UEFA} #
 {55,Venezuela,CONMEBOL}
 {56,Finland,UEFA}
 {57,Paraguay,CONMEBOL}
@@ -62,7 +62,7 @@
 {61,New Zealand,OFC}
 {62,North Korea,AFC}
 {63,Bolivia,CONMEBOL}
-{64,Tunisia,AFC}
+{64,Tunisia,CAF}
 {65,Cape Verde Islands,AFC}
 {66,Wales,UEFA}
 {67,Trinidad and Tobago,CONCACAF} 

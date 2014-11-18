@@ -51,8 +51,8 @@
 {El Salvador,Ecuador,1,5,neutral:true}
 {Brazil,Ecuador,1,0,neutral:true}
 {Ecuador,France,0,0,neutral:true}
-{Israel,Bosnia-Herzegovina,0,3}
-{Wales,Bosnia-Herzegovina,1,1}
+{Israel,Bosnia-Herzegovina,3,0}
+{Wales,Bosnia-Herzegovina,0,0}
 {South Africa,Nigeria,0,0}
 {Nigeria,Congo,2,3}
 {Ivory Coast,Sierra Leone,5,1}
@@ -75,3 +75,53 @@
 {Australia,Spain,0,3,neutral:true}
 {Honduras,Guatemala,0,2,neutral:true}
 {Honduras,El Salvador,0,1,neutral:true}
+{Ukraine,Slovakia,0,1}
+{Ukraine,USA,2,0,neutral:true}
+{Czech Republic,Iceland,2,1}
+{Turkey,Czech Republic,1,2}
+{Romania,Northern Ireland,2,0}
+{Finland,Romania,0,2}
+{Montenegro,Sweden,1,1}
+{Austria,Sweden,1,1}
+{Russia,Slovakia,1,0}
+{Slovakia,Montenegro,2,0}
+{Serbia,Denmark,1,3}
+{Armenia,Serbia,1,1}
+{Iceland,Turkey,3,0}
+{Iceland,Estonia,1,0}
+{Paraguay,Peru,2,1}
+{Peru,Guatemala,1,0}
+{Peru,Bolivia,1,1}
+{Austria,Montenegro,1,0}
+{Czech Republic,Austria,1,2}
+{Albania,Denmark,1,1}
+{Denmark,Armenia,2,1}
+{Estonia,Slovenia,1,0}
+{Argentina,Slovenia,2,0}
+{Scotland,Ireland,1,0}
+{Poland,Scotland,2,2}
+{El Salvador,Panama,1,3}
+{Mexico,Panama,1,0}
+{El Salvador,Panama,0,1,neutral:true}
+{Egypt,Senegal,0,1}
+{Egypt,Tunisia,0,1}
+{Germany,Poland,0,0}
+{Poland,Scotland,0,1}
+{England,Poland,2,0}
+{Tunisia,Senegal,1,0}
+{Senegal,Tunisia,0,0}
+{Denmark,Turkey,1,2}
+{USA,Turkey,2,1}
+{Turkey,Netherlands,0,2}
+{Honduras,Israel,2,4,neutral:true}
+{Mexico,Israel,3,0}
+{Israel,Northern Ireland,1,1}
+{Hungary,Finland,1,0}
+{Romania,Hungary,1,1}
+{South Africa,Congo,0,0}
+{Congo,South Africa,0,2}
+{Norway,Bulgaria,2,1}
+{Bulgaria,Czech Republic,0,1}
+{Ireland,Oman,2,0}
+{Ireland,Portugal,1,5,neutral:true}
+{Germany,Ireland,3,0}
