@@ -52,46 +52,47 @@
 {51,Hungary,UEFA} 
 {52,South Africa,CAF} 
 {53,Bulgaria,UEFA} 
-{54,Ireland,UEFA} #
-{55,Venezuela,CONMEBOL}
-{56,Finland,UEFA}
-{57,Paraguay,CONMEBOL}
-{58,Uzbekistan,AFC}
-{59,UAE,AFC}
-{60,Norway,UEFA}
-{61,New Zealand,OFC}
-{62,North Korea,AFC}
-{63,Bolivia,CONMEBOL}
-{64,Tunisia,CAF}
-{65,Cape Verde Islands,AFC}
-{66,Wales,UEFA}
+{54,Ireland,UEFA} 
+{55,Venezuela,CONMEBOL} 
+{56,Finland,UEFA} 
+{57,Paraguay,CONMEBOL} 
+{58,Uzbekistan,AFC} 
+{59,UAE,AFC} 
+{60,Norway,UEFA} 
+{61,New Zealand,OFC} 
+{62,North Korea,AFC} 
+{63,Bolivia,CONMEBOL} 
+{64,Tunisia,CAF} 
+{65,Cape Verde Islands,CAF} 
+{66,Wales,UEFA} 
 {67,Trinidad and Tobago,CONCACAF} 
-{68,Togo,CAF}
-{69,Northern Ireland,UEFA}
-{70,Albania,UEFA}
-{71,Guinea,CAF}
-{72,Angola,CAF}
-{74,Mali,CAF}
-{75,Congo DR,CAF}
-{76,Congo,CAF}
-{77,Montenegro,UEFA}
-{78,Gabon,CAF}
-{79,Antigua and Barbuda,CONCACAF}
-{80,Burkina Faso,CAF}
-{81,Guatemala,CONCACAF}
-{82,Libya,CAF}
-{83,Jordan,AFC}
-{84,Armenia,UEFA}
-{85,Sierra Leone,CAF}
-{86,Zambia,CAF}
-{87,Dominican Republic,CONCACAF}
-{88,Iraq,AFC}
-{89,El Salvador,CONCACAF}
-{90,Oman,AFC}
-{91,Uganda,CAF}
-{92,Benin,CAF}
-{93,Estonia,UEFA}
-{94,China,AFC}
-{95,Morocco,CAF}
-{96,Qatar,AFC}
+{68,Togo,CAF} 
+{69,Northern Ireland,UEFA} 
+{70,Albania,UEFA} 
+{71,Guinea,CAF} 
+{72,Angola,CAF} 
+{73,Mali,CAF} 
+{74,Congo DR,CAF} 
+{75,Congo,CAF} 
+{76,Montenegro,UEFA} 
+{77,Gabon,CAF} 
+{78,Antigua and Barbuda,CONCACAF} 
+{79,Burkina Faso,CAF} 
+{80,Guatemala,CONCACAF} 
+{81,Libya,CAF} 
+{82,Jordan,AFC} 
+{83,Armenia,UEFA} 
+{84,Sierra Leone,CAF} 
+{85,Zambia,CAF} 
+{86,Dominican Republic,CONCACAF} 
+{87,Iraq,AFC} 
+{88,El Salvador,CONCACAF} 
+{89,Oman,AFC} 
+{90,Uganda,CAF} 
+{91,Benin,CAF} 
+{92,Estonia,UEFA} 
+{93,China,AFC} 
+{94,Morocco,CAF} 
+{95,Qatar,AFC}
+{96,Lithuania,UEFA}
 {97,Saudi Arabia,AFC}

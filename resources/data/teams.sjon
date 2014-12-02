@@ -1,7 +1,7 @@
-#Ranking, Name, Nation, Value, shortName
+#Ranking, Name, Nation, value, nativeName, fullName
 {1,Real Madrid,Spain}
 {2,Barcelona,Spain}
-{3,Bayern Munich,Germany,nativeName:Bayern München}
+{3,Bayern,Germany,nativeName:Bayern München,fullName:Bayern Munich}
 {4,Chelsea,England}
 {5,Benfica,Portugal}
 {6,Manchester United,England}
@@ -22,12 +22,12 @@
 {21,Zenit,Russia} 
 {22,Manchester City,England} 
 {23,Seville,Spain,nativeName:Sevilla} 
-{24,Bayer Leverkusen,Germany} 
+{24,Bayer Leverkusen,Germany} 	
 {25,Marseille,France} 
 {26,Rubin Kazan,Russia} 
 {27,Olympiakos,Greece} 
 {28,CSKA Moscow,Russia,nativeName:CSKA Moskva} 
-{29,PSV,Netherlands} 
+{29,PSV,Netherlands,fullName:PSV Eindhoven} 
 {30,Ajax,Netherlands} 
 {31,Napoli,Italy} 
 {32,Liverpool,England} 
@@ -48,7 +48,7 @@
 {47,Fulham,England} 
 {48,Metalist Kharkiv,Ukraine} 
 {49,Lille,France} 
-{50,Kopenhagen,Denmark,nativeName:København} 
+{50,Copenhagen,Denmark,nativeName:København} 
 {51,Hannover,Germany} 
 {52,Malaga,Spain} 
 {53,Fenerbahce,Turkey} 
