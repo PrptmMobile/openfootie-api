@@ -13,7 +13,7 @@
 {12,Lyon,France}
 {13,Inter Milan,Italy}
 {14,Schalke,Germany}
-{15,Dortmund,Germany}
+{15,Dortmund,Germany,fullName:Borussia Dortmund}
 {16,Juventus,Italy}
 {17,PSG,France} 
 {18,Shakhtar Donetsk,Ukraine}
@@ -22,7 +22,7 @@
 {21,Zenit,Russia} 
 {22,Manchester City,England} 
 {23,Seville,Spain,nativeName:Sevilla} 
-{24,Bayer Leverkusen,Germany} 	
+{24,Leverkusen,Germany,fullName:Bayer Leverkusen} 	
 {25,Marseille,France} 
 {26,Rubin Kazan,Russia} 
 {27,Olympiakos,Greece} 

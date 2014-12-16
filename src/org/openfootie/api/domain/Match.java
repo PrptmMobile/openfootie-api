@@ -1,5 +1,7 @@
 package org.openfootie.api.domain;
 
+import org.openfootie.api.engine.MatchEngine;
+
 public class Match {
 	
 	public static enum Status {
@@ -21,6 +23,25 @@ public class Match {
 		this.awayTeamScore = awayTeamScore;
 		this.status = status;
 		this.neutral = neutral;
+	}
+	
+	public Match(String homeTeamName, String awayTeamName, Status status, boolean neutral) {
+		this.homeTeamName = homeTeamName;
+		this.awayTeamName = awayTeamName;
+		this.status = status;
+		this.neutral = neutral;
+		this.homeTeamScore = -2;
+		this.awayTeamScore = -2;
+	}
+	
+	@Override
+	public String toString() {
+		return this.homeTeamName + " - " + this.awayTeamName + " " + this.homeTeamScore + " - " + this.awayTeamScore;
+	}
+	
+	public void play(MatchEngine matchEngine) {
+		matchEngine.play(this);
+		this.status = Status.PLAYED;
 	}
 
 	public Status getStatus() {
@@ -58,5 +79,4 @@ public class Match {
 	public boolean isNeutral() {
 		return neutral;
 	}
-
 }

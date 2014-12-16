@@ -162,6 +162,5 @@ public class EnvironmentTest {
 		assertEquals("Salzburg", salzburg.getName());
 		assertEquals("PSV", psv.getName());
 		assertEquals("Benfica", benfica.getName());
-		
 	}
 }
