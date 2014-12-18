@@ -67,11 +67,40 @@ public class TeamRanking {
 		return teamQuantiles;
 	}
 	
-	/*
-	public void addTeamInPosition(Integer position, Rankable team) {
+	public TeamRanking filterByParticipants(List<Rankable> participants) {
+	
+		List<Rankable> filteredParticipants = new ArrayList<Rankable>();
 		
+		for (int i = 1; i < ranking.size(); i++) {
+			if (participants.contains(this.ranking.get(i))) {
+				filteredParticipants.add(this.ranking.get(i));
+			}
+ 		}
+		
+		return new TeamRanking(filteredParticipants);
 	}
-	*/
+	
+	public List<Rankable> getBottomTeams(int positions) {
+		
+		List<Rankable> teams = new ArrayList<Rankable>();
+		
+		for (int i = ranking.size(); i > ranking.size() - positions; i--) {
+			teams.add(ranking.get(i));
+		}
+		
+		return teams;
+	}
+	
+	public List<Rankable> getTopTeams(int positions) {
+		
+		List<Rankable> teams = new ArrayList<Rankable>();
+		
+		for (int i = 1; i < 1 + positions; i++) {
+			teams.add(ranking.get(i));
+		}
+		
+		return teams;
+	}
 	
 	public Rankable getTeamByPosition(Integer position) {
 		return ranking.get(position);

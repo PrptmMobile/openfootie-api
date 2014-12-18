@@ -15,6 +15,8 @@ public class ScoreSimulator implements MatchEngine {
 	
 	private int QUANTILES = 5;
 	
+	private static final double PENALTY_SHOOT_OUT_SUCCESS_RATE = 0.8d;
+	
 	private static Random rnd = new Random();
 
 	public ScoreSimulator(TeamRanking teamRanking, List<Match> sampleMatches) {
@@ -24,6 +26,64 @@ public class ScoreSimulator implements MatchEngine {
 	
 	void setQuantiles(int quantiles) {
 		QUANTILES = quantiles;
+	}
+	
+	public void simulateExtraTime(Match match) {
+		
+		Match extraTimeMatch = new Match(match.getHomeTeamName(), match.getAwayTeamName(), Match.Status.PLAYING, match.isNeutral());
+		
+		extraTimeMatch.play(this);
+		
+		int homeTeamETScore = extraTimeMatch.getHomeTeamScore() / 3;
+		int awayTeamETScore = extraTimeMatch.getAwayTeamScore() / 3;
+		
+		match.saveExtraTime();
+		
+		match.setHomeTeamScore(match.getHomeTeamScore() + homeTeamETScore);
+		match.setAwayTeamScore(match.getAwayTeamScore() + awayTeamETScore);
+	}
+	
+	public void simulatePenaltyShootOut(Match match) {
+		
+		int score1 = 0;
+		int score2 = 0;
+		
+		for (int i = 0; i < 5; i++) {
+			if (simulatePenaltyShot()) {
+				score1++;
+			}
+			if (isDecided(score1, score2, 4 - i, 5 - i)) {
+				break;
+			}
+			if (simulatePenaltyShot()) {
+				score2++;
+			}
+			if (isDecided(score1, score2, 4 - i, 4 - i)) {
+				break;
+			}
+		}
+		if (score1 == score2) {
+			do {
+				if (simulatePenaltyShot()) {
+					score1++;
+				}
+				if (simulatePenaltyShot()) {
+					score2++;
+				}
+			} while (!isDecided(score1, score2, 0, 0));
+		}
+		match.setHomeTeamPenaltyScore(score1);
+		match.setAwayTeamPenaltyScore(score2);
+		match.setDecidedOnPenalties();
+	}
+	
+	private boolean isDecided(int score1, int score2, int rest1, int rest2) {
+		return score1 - score2 > rest2 || score2 - score1 > rest1;
+		
+	}
+	
+	private boolean simulatePenaltyShot() {
+		return (rnd.nextDouble() < PENALTY_SHOOT_OUT_SUCCESS_RATE);
 	}
 	
 	public void play(Match match) {
