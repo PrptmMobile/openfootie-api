@@ -9,6 +9,7 @@ import java.util.Map;
 import org.openfootie.api.domain.Club;
 import org.openfootie.api.domain.Match;
 import org.openfootie.api.domain.Nation;
+import org.openfootie.api.domain.Rankable;
 import org.openfootie.api.environment.exceptions.EnvironmentLoadingException;
 import org.openfootie.api.simulator.TeamRanking;
 import org.sjon.db.SjonRecord;
@@ -123,8 +124,31 @@ public class Environment {
 	public List<Nation> getNations() {
 		return nations;
 	}
+	
+	public List<Rankable> getRankableNations() {
+		
+		List<Rankable> nations = new ArrayList<Rankable>();
+		
+		for (Nation nation:this.getNations()) {
+			nations.add(nation);
+		}
+		
+		return nations;
+		
+	}
 
 	public List<Club> getClubs() {
+		return clubs;
+	}
+	
+	public List<Rankable> getRankableClubs() {
+		
+		List<Rankable> clubs = new ArrayList<Rankable>();
+		
+		for (Club club:this.getClubs()) {
+			clubs.add(club);
+		}
+		
 		return clubs;
 	}
 

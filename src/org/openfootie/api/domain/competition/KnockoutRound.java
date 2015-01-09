@@ -36,6 +36,47 @@ public class KnockoutRound {
 				this.winner = this.singleMatch.getHomeTeamScore() > this.singleMatch.getAwayTeamScore() ? team1 : team2;
 			}
 		}
+		
+		@Override
+		public String toString() {
+			
+			StringBuilder fixture = new StringBuilder();
+			
+			fixture.append(team1.getName() + " - " + team2.getName());
+			
+			if (this.singleMatch.getStatus().equals(Match.Status.PLAYED)) {
+				
+				fixture.append(" ");
+				
+				if (!this.singleMatch.isExtraTimePlayed()) {
+					fixture.append(this.singleMatch.getHomeTeamScore() + " - " + this.singleMatch.getAwayTeamScore());
+				} else {
+					fixture.append(this.singleMatch.getNormalTimeHomeTeamScore() + " - " + this.singleMatch.getNormalTimeAwayTeamScore());
+					fixture.append(", ");
+					fixture.append(this.singleMatch.getHomeTeamScore() + " - " + this.singleMatch.getAwayTeamScore() + " (aet)");
+				}
+				
+				if (this.singleMatch.isDecidedOnPenalties()) {
+					fixture.append(", " + this.singleMatch.getHomeTeamPenaltyScore() + " - " + this.singleMatch.getAwayTeamPenaltyScore() + " (pens)");
+				}
+				
+			} 
+			
+			return fixture.toString();
+		}
+	}
+	
+	@Override
+	public String toString() {
+		
+		StringBuilder retVal = new StringBuilder();
+		
+		for (Pair pair:this.pairs) {
+			retVal.append(pair.toString());
+			retVal.append("\n");
+		}
+		
+		return retVal.toString();
 	}
 	
 	private List<Pair> pairs = new ArrayList<Pair>();
@@ -56,15 +97,33 @@ public class KnockoutRound {
 	}
 	
 	public void draw() {
+		
+		if (this.participants.size() <= 2) {
+			this.pairs.add(new Pair(this.participants.get(0), this.participants.get(1))); // Hardcode the draw
+			return; 
+		}
+		
 		Collections.shuffle(this.participants);
-		for (int i = 0; i < this.participants.size(); i+=2) {
+		for (int i = 0; i < this.participants.size(); i += 2) {
+			/**
+			 * TODO: DEBUG
+			 */
+			System.out.println(i + " vs. " + (i + 1));
 			this.pairs.add(new Pair(this.participants.get(i), this.participants.get(i + 1)));
 		}
 	}
 	
 	public void play() {
+		
 		for (Pair pair:this.pairs) {
+			
 			pair.play();
+			
+			/**
+			 * TODO: DEBUG
+			 */
+			System.out.println("Winner: " + pair.getWinner().getName());
+			
 			this.winners.add(pair.getWinner());
 		}
 	}

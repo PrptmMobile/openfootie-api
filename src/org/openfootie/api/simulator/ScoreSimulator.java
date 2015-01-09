@@ -37,7 +37,14 @@ public class ScoreSimulator implements MatchEngine {
 		int homeTeamETScore = extraTimeMatch.getHomeTeamScore() / 3;
 		int awayTeamETScore = extraTimeMatch.getAwayTeamScore() / 3;
 		
+		/*
+		 * TODO: DEBUG
+		 */
+		System.out.println("Extra time score: " + homeTeamETScore + " - " + awayTeamETScore);
+		
 		match.saveExtraTime();
+		
+		System.out.println("Normal time score: " + match.getHomeTeamScore() + " - " + match.getAwayTeamScore());
 		
 		match.setHomeTeamScore(match.getHomeTeamScore() + homeTeamETScore);
 		match.setAwayTeamScore(match.getAwayTeamScore() + awayTeamETScore);
@@ -91,6 +98,11 @@ public class ScoreSimulator implements MatchEngine {
 		// Get match details
 		String homeTeamName = match.getHomeTeamName();
 		String awayTeamName = match.getAwayTeamName();
+		
+		/**
+		 * TODO: DEBUG
+		 */
+		System.out.println("Calculating: " + homeTeamName + " - " + awayTeamName);
 		
 		// Split ranked teams to quantiles
 		List<List<Rankable>> teamQuantiles = teamRanking.getQuantiles(QUANTILES);
@@ -158,6 +170,14 @@ public class ScoreSimulator implements MatchEngine {
 			}
 		}
 		
+		/**
+		 * TODO: DEBUG
+		 */
+		System.out.println("Home/Away sample size: " + filteredHASample.size());
+		System.out.println("Neutral sample size: " + filteredNSample.size());
+		System.out.println("Pseudo-neutral sample size: " + filteredPNSample.size());
+		System.out.println("Reverse-neutral sample size: " + filteredRNSample.size());
+		
 		// Simple case; just use the sample directly
 		if (!match.isNeutral()) {
 			
@@ -173,6 +193,9 @@ public class ScoreSimulator implements MatchEngine {
 			int simPNeutralMatchIndex = -1;
 			int simRNNeutralMatchIndex = -1;
 			
+			int defaultHomeScore = 0;
+			int defaultAwayScore = 0;
+			
 			try {
 				simNeutralMatchIndex = rnd.nextInt(filteredNSample.size());
 			} catch (IllegalArgumentException iaex) {}
@@ -187,17 +210,29 @@ public class ScoreSimulator implements MatchEngine {
 			
 			Match simNMatch = null;
 			
-			if (simPNeutralMatchIndex > 0 && simRNNeutralMatchIndex > 0) {
+			if (simPNeutralMatchIndex > -1 && simRNNeutralMatchIndex > -1) {
 				simPNMatch = filteredPNSample.get(simPNeutralMatchIndex);
 				simRNMatch = filteredRNSample.get(simRNNeutralMatchIndex);
 			}
 			
-			if (simNeutralMatchIndex > 0) {
+			if (simNeutralMatchIndex > -1) {
 				simNMatch = filteredNSample.get(simNeutralMatchIndex);
 			}
 			
 			long simHomeScore = -1;
 			long simAwayScore = -1;
+			
+			// Default scores
+			if (simNMatch != null) {
+				defaultHomeScore = simNMatch.getHomeTeamScore();
+				defaultHomeScore = simNMatch.getAwayTeamScore();
+			} else if (simPNMatch != null) {
+				defaultHomeScore = simPNMatch.getHomeTeamScore();
+				defaultAwayScore = simPNMatch.getAwayTeamScore();
+			} else if (simRNMatch != null) {
+				defaultHomeScore = simRNMatch.getHomeTeamScore();
+				defaultAwayScore = simRNMatch.getAwayTeamScore();
+			}
 			
 			if (simPNMatch != null && simRNMatch != null) {
 				simHomeScore = Math.round((simPNMatch.getHomeTeamScore() + simRNMatch.getAwayTeamScore()) / 2d);
@@ -214,8 +249,8 @@ public class ScoreSimulator implements MatchEngine {
 				finalHomeScore = simNMatch.getHomeTeamScore();
 				finalAwayScore = simNMatch.getAwayTeamScore();
 			} else {
-				finalHomeScore = simHomeScore;
-				finalAwayScore = simAwayScore;
+				finalHomeScore = defaultHomeScore;
+				finalAwayScore = defaultAwayScore;
 			}
 			
 			match.setHomeTeamScore( (int) finalHomeScore);
