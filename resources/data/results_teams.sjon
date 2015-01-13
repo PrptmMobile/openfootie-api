@@ -38,15 +38,15 @@
 {Tottenham,Newcastle,1,2}
 {Manchester City,Tottenham,4,1}
 {Basel,Ludogorets,4,0}
-{Ludogoets,Basel,1,0}
-{Zenit,Bayer Leverkusen,1,2}
+{Ludogorets,Basel,1,0}
+{Zenit,Leverkusen,1,2}
 {CSKA Moscow,Zenit,0,1}
 {Manchester City,CSKA Moscow,1,2}
 {Manchester City,Newcastle,0,2}
 {Seville,Levante,1,1}
 {Seville,Standard Liege,3,1}
-{Hamburger,Bayer Leverkusen,1,0}
-{Bayer Leverkusen,Zenit,2,0}
+{Hamburger,Leverkusen,1,0}
+{Leverkusen,Zenit,2,0}
 {Bordeaux,Marseille,1,1}
 {Marseille,Lyon,4,2} #!
 {Rubin Kazan,Spartak Moscow,0,0}
