@@ -54,7 +54,15 @@ public class TeamRanking {
 			for (int i = (int) Math.ceil(currentQuantileStart); i < currentQuantileEnd; i++) {
 				currentQuantile.add(this.getTeamByPosition(i + 1));
 			}
-					
+			
+			/**
+			 * DEBUG
+			/*
+			System.out.println("Quantile range start: " + currentQuantileStart);
+			System.out.println("Quantile range end: " + currentQuantileEnd);
+			System.out.println("Quantile range size: " + currentQuantile.size());
+			*/
+			
 			teamQuantiles.add(currentQuantile);
 			currentQuantileStart = currentQuantileEnd;
 			currentQuantileEnd += quantileSize;

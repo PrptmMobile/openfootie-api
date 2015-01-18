@@ -174,9 +174,17 @@ public class ScoreSimulator implements MatchEngine {
 		 * TODO: DEBUG
 		 */
 		System.out.println("Home/Away sample size: " + filteredHASample.size());
-		System.out.println("Neutral sample size: " + filteredNSample.size());
+		debugDisplaySample(filteredHASample);
+		
+		// System.out.println("Neutral sample size: " + filteredNSample.size());
+		// debugDisplaySample(filteredNSample);
+		
 		System.out.println("Pseudo-neutral sample size: " + filteredPNSample.size());
-		System.out.println("Reverse-neutral sample size: " + filteredRNSample.size());
+		debugDisplaySample(filteredPNSample);
+		
+		// System.out.println("Reverse-neutral sample size: " + filteredRNSample.size());
+		// debugDisplaySample(filteredRNSample);
+		// **
 		
 		// Simple case; just use the sample directly
 		if (!match.isNeutral()) {
@@ -255,6 +263,12 @@ public class ScoreSimulator implements MatchEngine {
 			
 			match.setHomeTeamScore( (int) finalHomeScore);
 			match.setAwayTeamScore( (int) finalAwayScore);
+		}
+	}
+	
+	private void debugDisplaySample(List<Match> matches) {
+		for (Match match: matches) {
+			System.out.println(match);
 		}
 	}
 

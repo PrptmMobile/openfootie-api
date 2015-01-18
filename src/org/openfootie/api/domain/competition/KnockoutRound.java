@@ -105,10 +105,8 @@ public class KnockoutRound {
 		
 		Collections.shuffle(this.participants);
 		for (int i = 0; i < this.participants.size(); i += 2) {
-			/**
-			 * TODO: DEBUG
-			 */
-			System.out.println(i + " vs. " + (i + 1));
+			// DEBUG
+			// System.out.println(i + " vs. " + (i + 1));
 			this.pairs.add(new Pair(this.participants.get(i), this.participants.get(i + 1)));
 		}
 	}
