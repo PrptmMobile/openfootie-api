@@ -86,7 +86,7 @@
 {Ajax,Twente,3,0} #!
 {Twente,AZ,2,1} #!
 {Anderlecht,Standard Liege,0,2}
-{Anderlecht,Arsenal,1,2}
+{Dortmund,Anderlecht,1,1}
 {Fiorentina,PAOK,1,1}
 {PAOK,Fiorentina,0,1}
 {Salzburg,Celtic,2,2}
@@ -144,7 +144,7 @@
 {PAOK,Olympiakos,1,0} #!
 {Olympiakos,PAOK,2,1} #!
 {APOEL,PSG,0,1}
-{APOEL,Ajax,1,1}
+{Ajax,APOEL,4,0}
 {BATE,Shakhtar Donetsk,0,7}
 {BATE,Athletic Club,2,1}
 {Chelsea,Maribor,6,0}
