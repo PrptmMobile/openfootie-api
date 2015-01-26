@@ -37,14 +37,14 @@ public class ScoreSimulator implements MatchEngine {
 		int homeTeamETScore = extraTimeMatch.getHomeTeamScore() / 3;
 		int awayTeamETScore = extraTimeMatch.getAwayTeamScore() / 3;
 		
-		/*
-		 * TODO: DEBUG
-		 */
-		System.out.println("Extra time score: " + homeTeamETScore + " - " + awayTeamETScore);
+		
+		// ** DEBUG
+		// System.out.println("Extra time score: " + homeTeamETScore + " - " + awayTeamETScore);
 		
 		match.saveExtraTime();
 		
-		System.out.println("Normal time score: " + match.getHomeTeamScore() + " - " + match.getAwayTeamScore());
+		// ** DEBUG
+		// System.out.println("Normal time score: " + match.getHomeTeamScore() + " - " + match.getAwayTeamScore());
 		
 		match.setHomeTeamScore(match.getHomeTeamScore() + homeTeamETScore);
 		match.setAwayTeamScore(match.getAwayTeamScore() + awayTeamETScore);
@@ -100,9 +100,9 @@ public class ScoreSimulator implements MatchEngine {
 		String awayTeamName = match.getAwayTeamName();
 		
 		/**
-		 * TODO: DEBUG
+		 * DEBUG
 		 */
-		System.out.println("Calculating: " + homeTeamName + " - " + awayTeamName);
+		// System.out.println("Calculating: " + homeTeamName + " - " + awayTeamName);
 		
 		// Split ranked teams to quantiles
 		List<List<Rankable>> teamQuantiles = teamRanking.getQuantiles(QUANTILES);
@@ -170,17 +170,18 @@ public class ScoreSimulator implements MatchEngine {
 			}
 		}
 		
-		/**
-		 * TODO: DEBUG
+		/*
+		 * DEBUG
 		 */
-		System.out.println("Home/Away sample size: " + filteredHASample.size());
-		debugDisplaySample(filteredHASample);
+		
+		// System.out.println("Home/Away sample size: " + filteredHASample.size());
+		// debugDisplaySample(filteredHASample);
 		
 		// System.out.println("Neutral sample size: " + filteredNSample.size());
 		// debugDisplaySample(filteredNSample);
 		
-		System.out.println("Pseudo-neutral sample size: " + filteredPNSample.size());
-		debugDisplaySample(filteredPNSample);
+		// System.out.println("Pseudo-neutral sample size: " + filteredPNSample.size());
+		// debugDisplaySample(filteredPNSample);
 		
 		// System.out.println("Reverse-neutral sample size: " + filteredRNSample.size());
 		// debugDisplaySample(filteredRNSample);

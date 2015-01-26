@@ -30,9 +30,9 @@ public class KnockoutCompetition {
 		/*
 		 * TODO: DEBUG
 		 */
-		System.out.println("Number of participants: " + this.participants.size());
-		System.out.println("Number of proper rounds: " + properRounds);
-		System.out.println("Extra teams: " + extraTeams);
+		// System.out.println("Number of participants: " + this.participants.size());
+		// System.out.println("Number of proper rounds: " + properRounds);
+		// System.out.println("Extra teams: " + extraTeams);
 	
 		int roundsNum = 0;
 		

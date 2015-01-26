@@ -120,7 +120,7 @@ public class KnockoutRound {
 			/**
 			 * TODO: DEBUG
 			 */
-			System.out.println("Winner: " + pair.getWinner().getName());
+			// System.out.println("Winner: " + pair.getWinner().getName());
 			
 			this.winners.add(pair.getWinner());
 		}
