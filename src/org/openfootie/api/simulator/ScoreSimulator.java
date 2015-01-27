@@ -105,70 +105,8 @@ public class ScoreSimulator implements MatchEngine {
 		// System.out.println("Calculating: " + homeTeamName + " - " + awayTeamName);
 		
 		// Split ranked teams to quantiles
-		List<List<Rankable>> teamQuantiles = teamRanking.getQuantiles(QUANTILES);
 		
-		List<List<String>> quantileRangesIndex = new ArrayList<List<String>>();
 		
-		for (List<Rankable> quantileRange:teamQuantiles) {
-			
-			List<String> currentRangeIndex = new ArrayList<String>();
-			
-			for (Rankable team:quantileRange) {
-				currentRangeIndex.add(team.getName());
-			}
-			
-			quantileRangesIndex.add(currentRangeIndex);
-		}
-		
-		int homeTeamQuantileRange = getTeamQuantile(homeTeamName, quantileRangesIndex);
-		int awayTeamQuantileRange = getTeamQuantile(awayTeamName, quantileRangesIndex);
-		
-		List<Match> filteredHASample = new ArrayList<Match>();
-		List<Match> filteredNSample = new ArrayList<Match>(); // Neutral
-		List<Match> filteredPNSample = new ArrayList<Match>(); // Pseudo-neutral
-		List<Match> filteredRNSample = new ArrayList<Match>(); // Reverse-neutral
-		
-		// Filter match sample
-		for (Match sampleMatch:sampleMatches) {
-			
-			// System.out.println(sampleMatch);
-		
-			int sampleHomeTeamQlRange = getTeamQuantile(sampleMatch.getHomeTeamName(), quantileRangesIndex);
-			int sampleAwayTeamQlRange = getTeamQuantile(sampleMatch.getAwayTeamName(), quantileRangesIndex);
-			
-			if (
-				sampleHomeTeamQlRange == homeTeamQuantileRange && 
-				sampleAwayTeamQlRange == awayTeamQuantileRange &&
-				!sampleMatch.isNeutral()
-			) {
-				filteredHASample.add(sampleMatch);
-				filteredPNSample.add(sampleMatch);
-				// System.out.println("HA");
-			}
-			if (
-				sampleHomeTeamQlRange == awayTeamQuantileRange &&
-				sampleAwayTeamQlRange == homeTeamQuantileRange &&
-				!sampleMatch.isNeutral() 
-			) {
-				// System.out.println("RN");
-				filteredRNSample.add(sampleMatch);
-			}
-			if (sampleMatch.isNeutral()) {
-				// System.out.println("Neutral");
-				if (
-					sampleHomeTeamQlRange == homeTeamQuantileRange && 
-					sampleAwayTeamQlRange == awayTeamQuantileRange
-				) {
-					filteredNSample.add(sampleMatch);
-				}
-				if (
-					sampleHomeTeamQlRange == awayTeamQuantileRange &&
-					sampleAwayTeamQlRange == homeTeamQuantileRange
-				) {
-					filteredNSample.add(sampleMatch);
-				}
-			}
-		}
 		
 		/*
 		 * DEBUG
@@ -187,83 +125,157 @@ public class ScoreSimulator implements MatchEngine {
 		// debugDisplaySample(filteredRNSample);
 		// **
 		
-		// Simple case; just use the sample directly
-		if (!match.isNeutral()) {
-			
-			int simMatchIndex = rnd.nextInt(filteredHASample.size());
-			Match simMatch = filteredHASample.get(simMatchIndex);
-			
-			match.setHomeTeamScore(simMatch.getHomeTeamScore());
-			match.setAwayTeamScore(simMatch.getAwayTeamScore());
-			
-		} else { // Simulate venue neutrality
-			
-			int simNeutralMatchIndex = -1;
-			int simPNeutralMatchIndex = -1;
-			int simRNNeutralMatchIndex = -1;
-			
-			int defaultHomeScore = 0;
-			int defaultAwayScore = 0;
-			
-			try {
-				simNeutralMatchIndex = rnd.nextInt(filteredNSample.size());
-			} catch (IllegalArgumentException iaex) {}
-			
-			try {
-				simPNeutralMatchIndex = rnd.nextInt(filteredPNSample.size());
-				simRNNeutralMatchIndex = rnd.nextInt(filteredRNSample.size());
-			} catch (IllegalArgumentException iaex) {}
-			
-			Match simPNMatch = null;
-			Match simRNMatch = null;
-			
-			Match simNMatch = null;
-			
-			if (simPNeutralMatchIndex > -1 && simRNNeutralMatchIndex > -1) {
-				simPNMatch = filteredPNSample.get(simPNeutralMatchIndex);
-				simRNMatch = filteredRNSample.get(simRNNeutralMatchIndex);
+		for (int i = QUANTILES; i > 0; i--) {
+			List<List<Rankable>> teamQuantiles = teamRanking.getQuantiles(i);
+			List<List<String>> quantileRangesIndex = new ArrayList<List<String>>();
+			for (List<Rankable> quantileRange : teamQuantiles) {
+
+				List<String> currentRangeIndex = new ArrayList<String>();
+
+				for (Rankable team : quantileRange) {
+					currentRangeIndex.add(team.getName());
+				}
+
+				quantileRangesIndex.add(currentRangeIndex);
 			}
-			
-			if (simNeutralMatchIndex > -1) {
-				simNMatch = filteredNSample.get(simNeutralMatchIndex);
-			}
-			
-			long simHomeScore = -1;
-			long simAwayScore = -1;
-			
-			// Default scores
-			if (simNMatch != null) {
-				defaultHomeScore = simNMatch.getHomeTeamScore();
-				defaultHomeScore = simNMatch.getAwayTeamScore();
-			} else if (simPNMatch != null) {
-				defaultHomeScore = simPNMatch.getHomeTeamScore();
-				defaultAwayScore = simPNMatch.getAwayTeamScore();
-			} else if (simRNMatch != null) {
-				defaultHomeScore = simRNMatch.getHomeTeamScore();
-				defaultAwayScore = simRNMatch.getAwayTeamScore();
-			}
-			
-			if (simPNMatch != null && simRNMatch != null) {
-				simHomeScore = Math.round((simPNMatch.getHomeTeamScore() + simRNMatch.getAwayTeamScore()) / 2d);
-				simAwayScore = Math.round((simPNMatch.getAwayTeamScore() + simRNMatch.getHomeTeamScore()) / 2d);	
+			int homeTeamQuantileRange = getTeamQuantile(homeTeamName,
+					quantileRangesIndex);
+			int awayTeamQuantileRange = getTeamQuantile(awayTeamName,
+					quantileRangesIndex);
+			List<Match> filteredHASample = new ArrayList<Match>();
+			List<Match> filteredNSample = new ArrayList<Match>(); // Neutral
+			List<Match> filteredPNSample = new ArrayList<Match>(); // Pseudo-neutral
+			List<Match> filteredRNSample = new ArrayList<Match>(); // Reverse-neutral
+			// Filter match sample
+			for (Match sampleMatch : sampleMatches) {
+
+				// System.out.println(sampleMatch);
+
+				int sampleHomeTeamQlRange = getTeamQuantile(
+						sampleMatch.getHomeTeamName(), quantileRangesIndex);
+				int sampleAwayTeamQlRange = getTeamQuantile(
+						sampleMatch.getAwayTeamName(), quantileRangesIndex);
+
+				if (sampleHomeTeamQlRange == homeTeamQuantileRange
+						&& sampleAwayTeamQlRange == awayTeamQuantileRange
+						&& !sampleMatch.isNeutral()) {
+					filteredHASample.add(sampleMatch);
+					filteredPNSample.add(sampleMatch);
+					// System.out.println("HA");
+				}
+				if (sampleHomeTeamQlRange == awayTeamQuantileRange
+						&& sampleAwayTeamQlRange == homeTeamQuantileRange
+						&& !sampleMatch.isNeutral()) {
+					// System.out.println("RN");
+					filteredRNSample.add(sampleMatch);
+				}
+				if (sampleMatch.isNeutral()) {
+					// System.out.println("Neutral");
+					if (sampleHomeTeamQlRange == homeTeamQuantileRange
+							&& sampleAwayTeamQlRange == awayTeamQuantileRange) {
+						filteredNSample.add(sampleMatch);
+					}
+					if (sampleHomeTeamQlRange == awayTeamQuantileRange
+							&& sampleAwayTeamQlRange == homeTeamQuantileRange) {
+						filteredNSample.add(sampleMatch);
+					}
+				}
 			}
 			
 			long finalHomeScore = -1;
 			long finalAwayScore = -1;
 			
-			if (simHomeScore > -1 && simAwayScore > -1 && simNMatch != null) {
-				finalHomeScore = Math.round((simNMatch.getHomeTeamScore() + simHomeScore) / 2d);
-				finalAwayScore = Math.round((simNMatch.getAwayTeamScore() + simAwayScore) / 2d);
-			} else if (simNMatch != null) {
-				finalHomeScore = simNMatch.getHomeTeamScore();
-				finalAwayScore = simNMatch.getAwayTeamScore();
-			} else {
-				finalHomeScore = defaultHomeScore;
-				finalAwayScore = defaultAwayScore;
+			// Simple case; just use the sample directly
+			if (!match.isNeutral()) {
+
+				int simMatchIndex = rnd.nextInt(filteredHASample.size());
+				Match simMatch = filteredHASample.get(simMatchIndex);
+				
+				finalHomeScore = simMatch.getHomeTeamScore();
+				finalAwayScore = simMatch.getAwayTeamScore();
+
+			} else { // Simulate venue neutrality
+
+				int simNeutralMatchIndex = -1;
+				int simPNeutralMatchIndex = -1;
+				int simRNNeutralMatchIndex = -1;
+
+				int defaultHomeScore = 0;
+				int defaultAwayScore = 0;
+
+				try {
+					simNeutralMatchIndex = rnd.nextInt(filteredNSample.size());
+				} catch (IllegalArgumentException iaex) {
+				}
+
+				try {
+					simPNeutralMatchIndex = rnd
+							.nextInt(filteredPNSample.size());
+					simRNNeutralMatchIndex = rnd.nextInt(filteredRNSample
+							.size());
+				} catch (IllegalArgumentException iaex) {
+				}
+
+				Match simPNMatch = null;
+				Match simRNMatch = null;
+
+				Match simNMatch = null;
+
+				if (simPNeutralMatchIndex > -1 && simRNNeutralMatchIndex > -1) {
+					simPNMatch = filteredPNSample.get(simPNeutralMatchIndex);
+					simRNMatch = filteredRNSample.get(simRNNeutralMatchIndex);
+				}
+
+				if (simNeutralMatchIndex > -1) {
+					simNMatch = filteredNSample.get(simNeutralMatchIndex);
+				}
+
+				long simHomeScore = -1;
+				long simAwayScore = -1;
+
+				// Default scores
+				if (simNMatch != null) {
+					defaultHomeScore = simNMatch.getHomeTeamScore();
+					defaultHomeScore = simNMatch.getAwayTeamScore();
+				} else if (simPNMatch != null) {
+					defaultHomeScore = simPNMatch.getHomeTeamScore();
+					defaultAwayScore = simPNMatch.getAwayTeamScore();
+				} else if (simRNMatch != null) {
+					defaultHomeScore = simRNMatch.getHomeTeamScore();
+					defaultAwayScore = simRNMatch.getAwayTeamScore();
+				} else {
+					continue; // Not satisfying sample. Reduce the quantiles.
+				}
+
+				if (simPNMatch != null && simRNMatch != null) {
+					simHomeScore = Math
+							.round((simPNMatch.getHomeTeamScore() + simRNMatch
+									.getAwayTeamScore()) / 2d);
+					simAwayScore = Math
+							.round((simPNMatch.getAwayTeamScore() + simRNMatch
+									.getHomeTeamScore()) / 2d);
+				}
+
+				if (simHomeScore > -1 && simAwayScore > -1 && simNMatch != null) {
+					finalHomeScore = Math
+							.round((simNMatch.getHomeTeamScore() + simHomeScore) / 2d);
+					finalAwayScore = Math
+							.round((simNMatch.getAwayTeamScore() + simAwayScore) / 2d);
+				} else if (simNMatch != null) {
+					finalHomeScore = simNMatch.getHomeTeamScore();
+					finalAwayScore = simNMatch.getAwayTeamScore();
+				} else {
+					finalHomeScore = defaultHomeScore;
+					finalAwayScore = defaultAwayScore;
+				}
+
+				match.setHomeTeamScore((int) finalHomeScore);
+				match.setAwayTeamScore((int) finalAwayScore);
+				
+				if (finalHomeScore > -1 && finalAwayScore > -1) {
+					break; // We have a valid score. Nothing to do around here
+				}
 			}
-			
-			match.setHomeTeamScore( (int) finalHomeScore);
-			match.setAwayTeamScore( (int) finalAwayScore);
 		}
 	}
 	
