@@ -1,6 +1,7 @@
 package org.openfootie.api.domain;
 
 import org.openfootie.api.engine.MatchEngine;
+import org.openfootie.api.simulator.TeamRanking;
 
 public class Match {
 	
@@ -78,6 +79,10 @@ public class Match {
 		this.status = Status.PLAYED;
 	}
 
+	public boolean hasRankedOpponents(TeamRanking ranking) {
+		return (ranking.getPositionByName(this.homeTeamName) != null && ranking.getPositionByName(this.awayTeamName) != null);
+	}
+	
 	public Status getStatus() {
 		return status;
 	}

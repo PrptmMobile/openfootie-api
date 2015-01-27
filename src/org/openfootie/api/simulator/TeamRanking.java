@@ -11,6 +11,7 @@ public class TeamRanking {
 	
 	private Map<Integer, Rankable> ranking;
 	private Map<Rankable, Integer> reverseRanking;
+	private Map<String, Integer> nameRanking;
 	
 	public TeamRanking(List<? extends Rankable> teams) {
 		
@@ -18,10 +19,12 @@ public class TeamRanking {
 		
 		this.ranking = new HashMap<Integer, Rankable>();
 		this.reverseRanking = new HashMap<Rankable, Integer>();
+		this.nameRanking = new HashMap<String, Integer>();
 		
 		for (Rankable team:teams) {
 			ranking.put(currentPosition, team);
 			reverseRanking.put(team, currentPosition);
+			nameRanking.put(team.getName(), currentPosition);
 			currentPosition++;
 		}
 	}
@@ -116,5 +119,9 @@ public class TeamRanking {
 	
 	public Integer getPositionByTeam(Rankable team) {
 		return reverseRanking.get(team);
+	}
+
+	public Integer getPositionByName(String name) {
+		return nameRanking.get(name);
 	}
 }

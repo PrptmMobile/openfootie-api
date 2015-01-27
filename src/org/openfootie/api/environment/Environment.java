@@ -11,6 +11,7 @@ import org.openfootie.api.domain.Match;
 import org.openfootie.api.domain.Nation;
 import org.openfootie.api.domain.Rankable;
 import org.openfootie.api.environment.exceptions.EnvironmentLoadingException;
+import org.openfootie.api.environment.exceptions.InconsistentDataException;
 import org.openfootie.api.simulator.TeamRanking;
 import org.sjon.db.SjonRecord;
 import org.sjon.db.SjonTable;
@@ -30,7 +31,8 @@ public class Environment {
 		CLUB_DEFAULT
 	}
 	
-	public Environment(String nationDataSource, String clubsDataSource, String nationMatchesDataSource, String clubMatchesDataSource) throws EnvironmentLoadingException {
+	public Environment(String nationDataSource, String clubsDataSource, String nationMatchesDataSource, String clubMatchesDataSource) 
+			throws EnvironmentLoadingException, InconsistentDataException {
 		
 		SjonTable nationsTable;
 		SjonTable clubsTable;
@@ -107,14 +109,31 @@ public class Environment {
 			this.clubs.add(club);
 		}
 		
+		TeamRanking nationRanking = new TeamRanking(this.nations);
+		TeamRanking clubRanking = new TeamRanking(this.clubs);
+		
 		// Nation matches
 		for (SjonRecord matchRecord:nationMatchesRecords) {
-			this.nationMatches.add(extractMatch(matchRecord));
+			
+			Match match = extractMatch(matchRecord);
+			
+			if (!match.hasRankedOpponents(nationRanking)) {
+				throw new InconsistentDataException("Match teams not ranked: " + match.getHomeTeamName() + " - " + match.getAwayTeamName());
+			}
+			
+			this.nationMatches.add(match);
 		}
 		
 		// Club matches
 		for (SjonRecord matchRecord:clubMatchesRecords) {
-			this.clubMatches.add(extractMatch(matchRecord));
+			
+			Match match = extractMatch(matchRecord);
+			
+			if (!match.hasRankedOpponents(clubRanking)) {
+				throw new InconsistentDataException("Match teams not ranked: " + match.getHomeTeamName() + " - " + match.getAwayTeamName());
+			}
+			
+			this.clubMatches.add(match);
 		}
 		
 		this.rankings.put(Ranking.NATION_DEFAULT, new TeamRanking(this.nations));
