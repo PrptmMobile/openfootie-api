@@ -46,11 +46,22 @@ public class KnockoutCompetition {
 			this.rounds.add(new KnockoutRound());
 		}
 		
+		int firstProperRoundIndex = -1;
+		
 		if (extraTeams > 0) {
 			this.rounds.get(0).setParticipants(this.ranking.getBottomTeams(2 * extraTeams));
+			this.rounds.get(0).setLabel("Preliminary round");
 			this.rounds.get(1).setParticipants(this.ranking.getTopTeams(this.participants.size() - 2 * extraTeams));
+			firstProperRoundIndex = 1;
 		} else {
 			this.rounds.get(0).setParticipants(this.participants);
+			firstProperRoundIndex = 0;
+		}
+		
+		for (int i = 0; i < rounds.size(); i++) {
+			if (this.rounds.get(i).getLabel() == null) {
+				this.rounds.get(i).setLabel("Round " + (i + 1 - firstProperRoundIndex));
+			}
 		}
 	}
 	
@@ -66,6 +77,7 @@ public class KnockoutCompetition {
 			}
 			
 			rounds.get(i + 1).addParticipants(rounds.get(i).getWinners());
+			rounds.get(i + 1).updateLabel();
 		}
 	}
 	
@@ -76,7 +88,11 @@ public class KnockoutCompetition {
 		
 		for (int i = 0; i < rounds.size(); i++) {
 			
-			transcript.append("Round " + (i + 1));
+			if (rounds.get(i).getLabel() != null) {
+				transcript.append(rounds.get(i).getLabel());
+			} else {
+				transcript.append("Round " + (i + 1));
+			}
 			transcript.append("\n");
 			
 			transcript.append(rounds.get(i).toString());

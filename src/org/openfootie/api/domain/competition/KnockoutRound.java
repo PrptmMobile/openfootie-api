@@ -79,6 +79,16 @@ public class KnockoutRound {
 		return retVal.toString();
 	}
 	
+	private String label = null;
+	
+	public void setLabel(String label) {
+		this.label = label;
+	}
+	
+	public String getLabel() {
+		return this.label;
+	}
+	
 	private List<Pair> pairs = new ArrayList<Pair>();
 	private List<Rankable> participants = new ArrayList<Rankable>();
 	
@@ -92,9 +102,40 @@ public class KnockoutRound {
 		this.participants = participants;
 	}
 	
+	public void updateLabel() {
+		switch(participants.size()) {
+		case 2:
+			this.label = "Final";
+			break;
+		case 4:
+			this.label = "Semi final";
+			break;
+		case 8:
+			this.label = "Quarter final";
+		}
+	}
+	
 	public void addParticipants(List<Rankable> participants) {
 		this.participants.addAll(participants);
 	}
+	
+	/*
+	public KnockoutRound() {
+		switch(pairs.size()) {
+		case 1:
+			this.label = "Final";
+			break;
+		case 2:
+			this.label = "Semi final";
+			break;
+		case 4:
+			this.label = "Quarter final";
+			break;
+		default:
+			this.label = null;
+		}
+	}
+	*/
 	
 	public void draw() {
 		
@@ -118,7 +159,7 @@ public class KnockoutRound {
 			pair.play();
 			
 			/**
-			 * TODO: DEBUG
+			 * DEBUG
 			 */
 			// System.out.println("Winner: " + pair.getWinner().getName());
 			
