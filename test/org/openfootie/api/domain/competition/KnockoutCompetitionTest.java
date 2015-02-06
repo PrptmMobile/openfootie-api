@@ -25,7 +25,8 @@ public class KnockoutCompetitionTest {
 	@Test
 	public void testClubCompetition() {	
 		this.clubCompetition = 
-				new KnockoutCompetition(environment.getRankableClubs(), environment.getRankings().get(Environment.Ranking.CLUB_DEFAULT), environment.getClubMatches());
+				new KnockoutCompetition(environment.getRankableClubs(), environment.getRankings().get(Environment.Ranking.CLUB_DEFAULT), environment.getClubMatches(),
+						KnockoutCompetitionTemplate.SINGLE_MATCH_NEUTRAL, KnockoutCompetitionTemplate.SINGLE_MATCH_NEUTRAL);
 		this.clubCompetition.play();
 		System.out.println(this.clubCompetition.toString());
 	}
@@ -33,7 +34,8 @@ public class KnockoutCompetitionTest {
 	@Test
 	public void testNationCompetition() {
 		this.nationCompetition = 
-				new KnockoutCompetition(environment.getRankableNations(), environment.getRankings().get(Environment.Ranking.NATION_DEFAULT), environment.getNationMatches());
+				new KnockoutCompetition(environment.getRankableNations(), environment.getRankings().get(Environment.Ranking.NATION_DEFAULT), environment.getNationMatches(),
+						KnockoutCompetitionTemplate.SINGLE_MATCH_NEUTRAL, KnockoutCompetitionTemplate.SINGLE_MATCH_NEUTRAL);
 		this.nationCompetition.play();
 		System.out.println(this.nationCompetition.toString());
 	}

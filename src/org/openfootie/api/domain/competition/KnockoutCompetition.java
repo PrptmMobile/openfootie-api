@@ -17,7 +17,8 @@ public class KnockoutCompetition {
 	
 	public static ScoreSimulator matchEngine;
 	
-	public KnockoutCompetition(List<Rankable> participants, TeamRanking ranking, List<Match> sampleMatches) {
+	public KnockoutCompetition(List<Rankable> participants, TeamRanking ranking, List<Match> sampleMatches, 
+			KnockoutCompetitionTemplate competitionTemplate, KnockoutCompetitionTemplate finalMatchTemplate) {
 		
 		matchEngine = new ScoreSimulator(ranking, sampleMatches);
 		
@@ -42,9 +43,11 @@ public class KnockoutCompetition {
 			roundsNum = properRounds;
 		}
 		
-		for (int i = 0; i < roundsNum; i++) {
-			this.rounds.add(new KnockoutRound());
+		for (int i = 0; i < roundsNum - 1; i++) {
+			this.rounds.add(new KnockoutRound(competitionTemplate));
 		}
+		
+		this.rounds.add(new KnockoutRound(finalMatchTemplate));
 		
 		int firstProperRoundIndex = -1;
 		

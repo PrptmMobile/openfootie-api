@@ -9,7 +9,13 @@ import org.openfootie.api.domain.Rankable;
 
 public class KnockoutRound {
 	
-	private static class Pair {
+	private KnockoutCompetitionTemplate template;
+	
+	public KnockoutRound(KnockoutCompetitionTemplate template) {
+		this.template = template;
+	}
+	
+	private class Pair {
 		
 		private Match singleMatch;
 		
@@ -28,12 +34,16 @@ public class KnockoutRound {
 		}
 		
 		public void play() {
-			this.singleMatch = new Match(team1.getName(), team2.getName(), Match.Status.FIXTURE, true);
-			this.singleMatch.play(KnockoutCompetition.matchEngine, false);
-			if (this.singleMatch.isDecidedOnPenalties()) {
-				this.winner = this.singleMatch.getHomeTeamPenaltyScore() > this.singleMatch.getAwayTeamPenaltyScore() ? team1 : team2;
-			} else {
-				this.winner = this.singleMatch.getHomeTeamScore() > this.singleMatch.getAwayTeamScore() ? team1 : team2;
+			switch(template) {
+			case SINGLE_MATCH_NEUTRAL:
+				this.singleMatch = new Match(team1.getName(), team2.getName(), Match.Status.FIXTURE, true);
+				this.singleMatch.play(KnockoutCompetition.matchEngine, false);
+				if (this.singleMatch.isDecidedOnPenalties()) {
+					this.winner = this.singleMatch.getHomeTeamPenaltyScore() > this.singleMatch.getAwayTeamPenaltyScore() ? team1 : team2;
+				} else {
+					this.winner = this.singleMatch.getHomeTeamScore() > this.singleMatch.getAwayTeamScore() ? team1 : team2;
+				}
+				break;
 			}
 		}
 		
