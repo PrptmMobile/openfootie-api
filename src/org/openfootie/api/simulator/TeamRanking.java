@@ -82,7 +82,7 @@ public class TeamRanking {
 	
 		List<Rankable> filteredParticipants = new ArrayList<Rankable>();
 		
-		for (int i = 1; i < ranking.size(); i++) {
+		for (int i = 1; i <= ranking.size(); i++) {
 			if (participants.contains(this.ranking.get(i))) {
 				filteredParticipants.add(this.ranking.get(i));
 			}
@@ -95,7 +95,11 @@ public class TeamRanking {
 		
 		List<Rankable> teams = new ArrayList<Rankable>();
 		
+		// System.out.println("Ranking size: " + ranking.size());
+		
 		for (int i = ranking.size(); i > ranking.size() - positions; i--) {
+			// System.out.println(ranking.get(i).getName());
+			// System.out.println("Ranking: " + i);
 			teams.add(ranking.get(i));
 		}
 		
