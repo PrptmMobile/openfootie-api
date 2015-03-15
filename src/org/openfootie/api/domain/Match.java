@@ -26,6 +26,9 @@ public class Match {
 	private boolean extraTime;
 	private boolean penalties;
 	
+	private int homeTeamAggregateScore;
+	private int awayTeamAggregateScore;
+	
 	public Match(String homeTeamName, String awayTeamName, Integer homeTeamScore, Integer awayTeamScore, Status status, boolean neutral) {
 		this.homeTeamName = homeTeamName;
 		this.awayTeamName = awayTeamName;
@@ -75,6 +78,31 @@ public class Match {
 			if (this.homeTeamScore == this.awayTeamScore) {
 				matchEngine.simulatePenaltyShootOut(this);
 			}
+		}
+		this.status = Status.PLAYED;
+	}
+	
+	public void play(MatchEngine matchEngine, int homeAggregateScore, int awayAggregateScore) {
+		
+		matchEngine.play(this);
+		this.homeTeamAggregateScore = this.homeTeamScore + homeAggregateScore;
+		this.awayTeamAggregateScore = this.awayTeamScore + awayAggregateScore;
+		
+		if (this.homeTeamAggregateScore == this.awayTeamAggregateScore) {
+			
+			int homeTeamAwayGoals = homeAggregateScore;
+			
+			// Check away goals
+			if (this.awayTeamScore == homeTeamAwayGoals) { // Tie break until penalty-shoot-out. Otherwise no special tie breaking action should take place (away goals rule)
+				
+				matchEngine.simulateExtraTime(this);
+				this.homeTeamAggregateScore += (this.homeTeamScore - this.normalTimeHomeTeamScore);
+				this.awayTeamAggregateScore += (this.awayTeamScore - this.normalTimeAwayTeamScore);
+				
+				if (this.homeTeamAggregateScore == this.awayTeamAggregateScore) { 
+					matchEngine.simulatePenaltyShootOut(this);
+				}
+			} 
 		}
 		this.status = Status.PLAYED;
 	}
@@ -157,5 +185,13 @@ public class Match {
 
 	public boolean isDecidedOnPenalties() {
 		return penalties;
+	}
+	
+	public int getHomeTeamAggregateScore() {
+		return this.homeTeamAggregateScore;
+	}
+	
+	public int getAwayTeamAggregateScore() {
+		return this.awayTeamAggregateScore;
 	}
 }

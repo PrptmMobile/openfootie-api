@@ -19,6 +19,9 @@ public class KnockoutRound {
 		
 		private Match singleMatch;
 		
+		private Match firstLeg;
+		private Match secondLeg;
+		
 		private Rankable team1;
 		private Rankable team2;
 		
@@ -44,6 +47,45 @@ public class KnockoutRound {
 					this.winner = this.singleMatch.getHomeTeamScore() > this.singleMatch.getAwayTeamScore() ? team1 : team2;
 				}
 				break;
+			case TWO_LEGGED:
+				this.firstLeg = new Match(team1.getName(), team2.getName(), Match.Status.FIXTURE, true);
+				this.secondLeg = new Match(team2.getName(), team1.getName(), Match.Status.FIXTURE, true);
+				this.firstLeg.play(KnockoutCompetition.matchEngine, true);
+				this.secondLeg.play(KnockoutCompetition.matchEngine, this.firstLeg.getAwayTeamScore(), this.firstLeg.getHomeTeamScore());
+				
+				if (this.secondLeg.getHomeTeamAggregateScore() > this.secondLeg.getAwayTeamAggregateScore()) {
+					this.winner = team2;
+				} else if (this.secondLeg.getHomeTeamAggregateScore() < this.secondLeg.getAwayTeamAggregateScore()) {
+					this.winner = team1;
+				} else if (this.secondLeg.getHomeTeamAggregateScore() == this.secondLeg.getAwayTeamAggregateScore()) {
+					
+					if (this.secondLeg.isDecidedOnPenalties()) {
+						if (this.secondLeg.getHomeTeamPenaltyScore() > this.secondLeg.getAwayTeamPenaltyScore()) {
+							this.winner = team2;
+						} else if (this.secondLeg.getHomeTeamPenaltyScore() < this.secondLeg.getAwayTeamPenaltyScore()) {
+							this.winner = team1;
+						}
+						
+						return; // We just took a shortcut, knowing that if a match is decided on penalties, the preceding conditions have already been checked
+					}
+					
+					int awayGoals1 = this.secondLeg.getAwayTeamScore();
+					int awayGoals2 = this.firstLeg.getAwayTeamScore();
+					
+					/**
+					 * DEBUG
+					 */
+					// System.out.println("Away goals 1: " + awayGoals1);
+					// System.out.println("Away goals 2: " + awayGoals2);
+					
+					if (awayGoals1 > awayGoals2) {
+						this.winner = team1;
+					} else if (awayGoals1 < awayGoals2) {
+						this.winner = team2;
+					}
+				}
+				
+				break;
 			}
 		}
 		
@@ -52,25 +94,69 @@ public class KnockoutRound {
 			
 			StringBuilder fixture = new StringBuilder();
 			
-			fixture.append(team1.getName() + " - " + team2.getName());
-			
-			if (this.singleMatch.getStatus().equals(Match.Status.PLAYED)) {
+			switch (template) {
+			case SINGLE_MATCH_NEUTRAL:
 				
-				fixture.append(" ");
+				fixture.append(team1.getName() + " - " + team2.getName());
 				
-				if (!this.singleMatch.isExtraTimePlayed()) {
-					fixture.append(this.singleMatch.getHomeTeamScore() + " - " + this.singleMatch.getAwayTeamScore());
-				} else {
-					fixture.append(this.singleMatch.getNormalTimeHomeTeamScore() + " - " + this.singleMatch.getNormalTimeAwayTeamScore());
-					fixture.append(", ");
-					fixture.append(this.singleMatch.getHomeTeamScore() + " - " + this.singleMatch.getAwayTeamScore() + " (aet)");
+				if (this.singleMatch.getStatus().equals(Match.Status.PLAYED)) {
+					
+					fixture.append(" ");
+					
+					if (!this.singleMatch.isExtraTimePlayed()) {
+						fixture.append(this.singleMatch.getHomeTeamScore() + " - " + this.singleMatch.getAwayTeamScore());
+					} else {
+						fixture.append(this.singleMatch.getNormalTimeHomeTeamScore() + " - " + this.singleMatch.getNormalTimeAwayTeamScore());
+						fixture.append(", ");
+						fixture.append(this.singleMatch.getHomeTeamScore() + " - " + this.singleMatch.getAwayTeamScore() + " (aet)");
+					}
+					
+					if (this.singleMatch.isDecidedOnPenalties()) {
+						fixture.append(", " + this.singleMatch.getHomeTeamPenaltyScore() + " - " + this.singleMatch.getAwayTeamPenaltyScore() + " (pens)");
+					}
+					
+				} 
+				
+				break;
+			case TWO_LEGGED:
+				
+				StringBuilder fixture1 = new StringBuilder();
+				StringBuilder fixture2 = new StringBuilder();
+				
+				fixture1.append(team1.getName() + " - " + team2.getName());
+				fixture2.append(team2.getName() + " - " + team1.getName());
+				
+				if (this.firstLeg.getStatus().equals(Match.Status.PLAYED)) {
+					fixture1.append(" ");
+					fixture1.append(this.firstLeg.getHomeTeamScore() + " - " + this.firstLeg.getAwayTeamScore());
 				}
 				
-				if (this.singleMatch.isDecidedOnPenalties()) {
-					fixture.append(", " + this.singleMatch.getHomeTeamPenaltyScore() + " - " + this.singleMatch.getAwayTeamPenaltyScore() + " (pens)");
+				if (this.secondLeg.getStatus().equals(Match.Status.PLAYED)) {
+					
+					fixture2.append(" ");
+					
+					if (!this.secondLeg.isExtraTimePlayed()) {
+						fixture2.append(this.secondLeg.getHomeTeamScore() + " - " + this.secondLeg.getAwayTeamScore());
+					} else {
+						fixture2.append(this.secondLeg.getNormalTimeHomeTeamScore() + " - " + this.secondLeg.getNormalTimeAwayTeamScore());
+						fixture2.append(", ");
+						fixture2.append(this.secondLeg.getHomeTeamScore() + " - " + this.secondLeg.getAwayTeamScore() + " (aet)");
+					}
+					
+					if (this.secondLeg.isDecidedOnPenalties()) {
+						fixture2.append(", " + this.secondLeg.getHomeTeamPenaltyScore() + " - " + this.secondLeg.getAwayTeamPenaltyScore() + " (pens)");
+					}
 				}
 				
-			} 
+				fixture2.append(", ");
+				fixture2.append("Agg: " + this.secondLeg.getHomeTeamAggregateScore() + " - " + this.secondLeg.getAwayTeamAggregateScore());
+				
+				fixture.append(fixture1);
+				fixture.append("\n");
+				fixture.append(fixture2);
+				
+				break;
+			}
 			
 			return fixture.toString();
 		}

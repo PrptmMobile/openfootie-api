@@ -13,7 +13,7 @@ public class ScoreSimulator implements MatchEngine {
 	private TeamRanking teamRanking;
 	private List<Match> sampleMatches;
 	
-	private int QUANTILES = 23; // Default value
+	private int QUANTILES = 5; // Default value
 	
 	private static final double PENALTY_SHOOT_OUT_SUCCESS_RATE = 0.8d;
 	

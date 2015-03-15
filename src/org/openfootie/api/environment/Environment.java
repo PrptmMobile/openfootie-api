@@ -153,7 +153,6 @@ public class Environment {
 		}
 		
 		return nations;
-		
 	}
 
 	public List<Club> getClubs() {
