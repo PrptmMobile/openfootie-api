@@ -106,8 +106,6 @@ public class ScoreSimulator implements MatchEngine {
 		
 		// Split ranked teams to quantiles
 		
-		
-		
 		/*
 		 * DEBUG
 		 */
@@ -193,6 +191,13 @@ public class ScoreSimulator implements MatchEngine {
 				
 				finalHomeScore = simMatch.getHomeTeamScore();
 				finalAwayScore = simMatch.getAwayTeamScore();
+				
+				match.setHomeTeamScore((int) finalHomeScore);
+				match.setAwayTeamScore((int) finalAwayScore);
+				
+				if (finalHomeScore > -1 && finalAwayScore > -1) {
+					break; // We have a valid score. Nothing to do around here
+				}
 
 			} else { // Simulate venue neutrality
 

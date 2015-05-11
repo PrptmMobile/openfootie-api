@@ -8,14 +8,9 @@ import org.openfootie.api.domain.Rankable;
 import org.openfootie.api.simulator.ScoreSimulator;
 import org.openfootie.api.simulator.TeamRanking;
 
-public class KnockoutCompetition {
+public class KnockoutCompetition extends Competition {
 	
 	private List<KnockoutRound> rounds = new ArrayList<KnockoutRound>();
-	
-	private TeamRanking ranking;
-	private List<Rankable> participants;
-	
-	public static ScoreSimulator matchEngine;
 	
 	public KnockoutCompetition(List<Rankable> participants, TeamRanking ranking, List<Match> sampleMatches, 
 			KnockoutCompetitionTemplate competitionTemplate, KnockoutCompetitionTemplate finalMatchTemplate) {

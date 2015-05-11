@@ -169,6 +169,17 @@ public class Environment {
 		
 		return clubs;
 	}
+	
+	public List<Rankable> getTopRankableClubs(int numberOfParticipants) {
+			
+		List<Rankable> clubs = new ArrayList<Rankable>();
+		
+		for (int i = 0; i < numberOfParticipants; i++) {
+			clubs.add(this.clubs.get(i));
+		}
+		
+		return clubs;
+	}
 
 	public List<Match> getNationMatches() {
 		return nationMatches;
