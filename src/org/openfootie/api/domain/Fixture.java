@@ -20,7 +20,20 @@ public class Fixture {
 		return this.awayTeam;
 	}
 	
+	public Fixture getReverse() {
+		return new Fixture(this.awayTeam, this.homeTeam);
+	}
+	
 	public Match createMatch() {
+		/**
+		 * DEBUG
+		*/
+		/*
+		System.out.println("DEBUG: Creating match");
+		System.out.println("Home team: " + homeTeam.getName());
+		System.out.println("Away team: " + awayTeam.getName());
+		System.out.println();
+		*/
 		return new Match(homeTeam.getName(), awayTeam.getName(), Status.FIXTURE, false);
 	}
 	

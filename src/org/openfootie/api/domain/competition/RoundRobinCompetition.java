@@ -145,6 +145,40 @@ public class RoundRobinCompetition extends Competition {
 		return pairsIndices;
 	}
 	
+	private List<RoundRobinRound> balanceMatchHosts(List<RoundRobinRound> rounds, List<Rankable> participants) {
+		
+		List<RoundRobinRound> retVal = new ArrayList<RoundRobinRound>();
+		Map<Rankable, Integer> homeMatches = new HashMap<Rankable, Integer>();
+		
+		for (Rankable participant: this.participants) {
+			homeMatches.put(participant, 0);
+		}
+		
+		for (RoundRobinRound round: rounds) {
+			
+			List<Fixture> fixtures = new ArrayList<Fixture>();
+			
+			for (Fixture fixture:round.getFixtures()) {
+				
+				if (fixture.getHomeTeam().getName() == null || fixture.getAwayTeam().getName() == null) {
+					continue;
+				}
+				
+				if (homeMatches.get(fixture.getHomeTeam()) > homeMatches.get(fixture.getAwayTeam())) {
+					fixtures.add(fixture.getReverse());
+					homeMatches.put(fixture.getAwayTeam(), homeMatches.get(fixture.getAwayTeam()) + 1);
+				} else {
+					fixtures.add(fixture);
+					homeMatches.put(fixture.getHomeTeam(), homeMatches.get(fixture.getHomeTeam()) + 1);
+				}
+			}
+			
+			retVal.add(new RoundRobinRound(fixtures));
+		}
+		
+		return retVal;	
+	}
+	
 	public void generateSchedule() {
 		
 		List<RoundRobinRound> rounds = new ArrayList<RoundRobinRound>();
@@ -168,6 +202,8 @@ public class RoundRobinCompetition extends Competition {
 			rounds.add(generateRound(pairsIndices, scheduleGraph));
 			scheduleGraph.rotate();
 		}
+		
+		rounds = balanceMatchHosts(rounds, this.participants);
 		
 		// Get the other half of reverse rounds
 		List<RoundRobinRound> clausura = new ArrayList<RoundRobinRound>();

@@ -17,6 +17,10 @@ public class RoundRobinRound {
 		this.fixtures = fixtures;
 	}
 	
+	public List<Fixture> getFixtures() {
+		return this.fixtures;
+	}
+	
 	public void play(CompetitionTable competitionTable) {
 		for (Fixture fixture: fixtures) {
 			Match match = fixture.createMatch();

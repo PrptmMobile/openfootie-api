@@ -41,7 +41,13 @@ public class RoundRobinCompetitionTest {
 				new RoundRobinCompetition(environment.getTopRankableClubs(5), environment.getRankings().get(Environment.Ranking.CLUB_DEFAULT), environment.getClubMatches());
 		this.roundRobinCompetition.generateSchedule();
 		RoundRobinSchedule schedule = this.roundRobinCompetition.getSchedule();
+		
+		System.out.println("Fixtures");
+		System.out.println();
 		System.out.println(schedule);
+		
+		this.roundRobinCompetition.play();
+		this.roundRobinCompetition.display();
 	}
 	
 	@Test
@@ -50,7 +56,13 @@ public class RoundRobinCompetitionTest {
 				new RoundRobinCompetition(environment.getTopRankableClubs(6), environment.getRankings().get(Environment.Ranking.CLUB_DEFAULT), environment.getClubMatches());
 		this.roundRobinCompetition.generateSchedule();
 		RoundRobinSchedule schedule = this.roundRobinCompetition.getSchedule();
+		
+		System.out.println("Fixtures");
+		System.out.println();
 		System.out.println(schedule);
+		
+		this.roundRobinCompetition.play();
+		this.roundRobinCompetition.display();
 	}
 	
 	@Test
@@ -59,7 +71,13 @@ public class RoundRobinCompetitionTest {
 				new RoundRobinCompetition(environment.getTopRankableClubs(8), environment.getRankings().get(Environment.Ranking.CLUB_DEFAULT), environment.getClubMatches());
 		this.roundRobinCompetition.generateSchedule();
 		RoundRobinSchedule schedule = this.roundRobinCompetition.getSchedule();
+		
+		System.out.println("Fixtures");
+		System.out.println();
 		System.out.println(schedule);
+		
+		this.roundRobinCompetition.play();
+		this.roundRobinCompetition.display();
 	}
 	
 	@Test
@@ -68,7 +86,13 @@ public class RoundRobinCompetitionTest {
 				new RoundRobinCompetition(environment.getTopRankableClubs(10), environment.getRankings().get(Environment.Ranking.CLUB_DEFAULT), environment.getClubMatches());
 		this.roundRobinCompetition.generateSchedule();
 		RoundRobinSchedule schedule = this.roundRobinCompetition.getSchedule();
+		
+		System.out.println("Fixtures");
+		System.out.println();
 		System.out.println(schedule);
+		
+		this.roundRobinCompetition.play();
+		this.roundRobinCompetition.display();
 	}
 	
 	@Test
@@ -77,7 +101,13 @@ public class RoundRobinCompetitionTest {
 				new RoundRobinCompetition(environment.getTopRankableClubs(12), environment.getRankings().get(Environment.Ranking.CLUB_DEFAULT), environment.getClubMatches());
 		this.roundRobinCompetition.generateSchedule();
 		RoundRobinSchedule schedule = this.roundRobinCompetition.getSchedule();
+		
+		System.out.println("Fixtures");
+		System.out.println();
 		System.out.println(schedule);
+		
+		this.roundRobinCompetition.play();
+		this.roundRobinCompetition.display();
 	}
 	
 	@Test
@@ -86,7 +116,13 @@ public class RoundRobinCompetitionTest {
 				new RoundRobinCompetition(environment.getTopRankableClubs(14), environment.getRankings().get(Environment.Ranking.CLUB_DEFAULT), environment.getClubMatches());
 		this.roundRobinCompetition.generateSchedule();
 		RoundRobinSchedule schedule = this.roundRobinCompetition.getSchedule();
+		
+		System.out.println("Fixtures");
+		System.out.println();
 		System.out.println(schedule);
+		
+		this.roundRobinCompetition.play();
+		this.roundRobinCompetition.display();
 	}
 	
 	@Test
@@ -95,7 +131,13 @@ public class RoundRobinCompetitionTest {
 				new RoundRobinCompetition(environment.getTopRankableClubs(16), environment.getRankings().get(Environment.Ranking.CLUB_DEFAULT), environment.getClubMatches());
 		this.roundRobinCompetition.generateSchedule();
 		RoundRobinSchedule schedule = this.roundRobinCompetition.getSchedule();
+		
+		System.out.println("Fixtures");
+		System.out.println();
 		System.out.println(schedule);
+		
+		this.roundRobinCompetition.play();
+		this.roundRobinCompetition.display();
 	}
 	
 	@Test
@@ -104,7 +146,13 @@ public class RoundRobinCompetitionTest {
 				new RoundRobinCompetition(environment.getTopRankableClubs(18), environment.getRankings().get(Environment.Ranking.CLUB_DEFAULT), environment.getClubMatches());
 		this.roundRobinCompetition.generateSchedule();
 		RoundRobinSchedule schedule = this.roundRobinCompetition.getSchedule();
+		
+		System.out.println("Fixtures");
+		System.out.println();
 		System.out.println(schedule);
+		
+		this.roundRobinCompetition.play();
+		this.roundRobinCompetition.display();
 	}
 	
 	@Test
@@ -113,7 +161,13 @@ public class RoundRobinCompetitionTest {
 				new RoundRobinCompetition(environment.getTopRankableClubs(20), environment.getRankings().get(Environment.Ranking.CLUB_DEFAULT), environment.getClubMatches());
 		this.roundRobinCompetition.generateSchedule();
 		RoundRobinSchedule schedule = this.roundRobinCompetition.getSchedule();
+		
+		System.out.println("Fixtures");
+		System.out.println();
 		System.out.println(schedule);
+		
+		this.roundRobinCompetition.play();
+		this.roundRobinCompetition.display();
 	}
 	
 	@Test
@@ -122,7 +176,13 @@ public class RoundRobinCompetitionTest {
 				new RoundRobinCompetition(environment.getTopRankableClubs(22), environment.getRankings().get(Environment.Ranking.CLUB_DEFAULT), environment.getClubMatches());
 		this.roundRobinCompetition.generateSchedule();
 		RoundRobinSchedule schedule = this.roundRobinCompetition.getSchedule();
+		
+		System.out.println("Fixtures");
+		System.out.println();
 		System.out.println(schedule);
+		
+		this.roundRobinCompetition.play();
+		this.roundRobinCompetition.display();
 	}
 	
 	@Test
@@ -131,6 +191,12 @@ public class RoundRobinCompetitionTest {
 				new RoundRobinCompetition(environment.getTopRankableClubs(24), environment.getRankings().get(Environment.Ranking.CLUB_DEFAULT), environment.getClubMatches());
 		this.roundRobinCompetition.generateSchedule();
 		RoundRobinSchedule schedule = this.roundRobinCompetition.getSchedule();
+		
+		System.out.println("Fixtures");
+		System.out.println();
 		System.out.println(schedule);
+		
+		this.roundRobinCompetition.play();
+		this.roundRobinCompetition.display();
 	}
 }

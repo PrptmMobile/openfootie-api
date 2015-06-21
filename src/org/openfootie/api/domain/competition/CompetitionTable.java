@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.openfootie.api.domain.Match;
+import org.openfootie.api.domain.Match.Status;
 import org.openfootie.api.domain.Rankable;
 
 public class CompetitionTable {
@@ -132,6 +133,10 @@ public class CompetitionTable {
 	
 	public void update(Match match) {
 		
+		if (match.getStatus() != Status.PLAYED) { // Don't update competition state if for whatever reason match is not played and finished
+			return;
+		}
+		
 		CompetitionTableRecord homeTeamTableRecord = tableRecords.get(match.getHomeTeamName());
 		CompetitionTableRecord awayTeamTableRecord = tableRecords.get(match.getAwayTeamName());
 		
@@ -168,7 +173,7 @@ public class CompetitionTable {
 		
 		Collections.sort(leagueTable);
 		
-		final int paddingSize = 15;
+		final int paddingSize = 20;
 		
 		for (int i = 0; i < leagueTable.size(); i++) {
 			

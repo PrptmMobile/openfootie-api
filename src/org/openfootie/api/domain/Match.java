@@ -6,7 +6,7 @@ import org.openfootie.api.simulator.TeamRanking;
 public class Match {
 	
 	public static enum Status {
-		FIXTURE,PLAYING,PLAYED,POSTPONED,INTERRUPTED,CANCELED
+		FIXTURE,PLAYING,PLAYED,POSTPONED,INTERRUPTED,CANCELED,VIRTUAL
 	}
 	
 	private Status status;
@@ -49,6 +49,15 @@ public class Match {
 	
 	@Override
 	public String toString() {
+		
+		if (this.homeTeamName == null) {
+			return this.awayTeamName + " day off";
+		}
+		
+		if (this.awayTeamName == null) {
+			return this.homeTeamName + " day off";
+		}
+		
 		return this.homeTeamName + " - " + this.awayTeamName + " " + this.homeTeamScore + " - " + this.awayTeamScore;
 	}
 	
@@ -68,6 +77,18 @@ public class Match {
 	}
 	
 	public void play(MatchEngine matchEngine, boolean drawAllowed) {
+		
+		if (this.homeTeamName == null) {
+			// System.out.println(this.awayTeamName + " day off");
+			this.status = Status.VIRTUAL;
+			return;
+		}
+		
+		if (this.awayTeamName == null) {
+			// System.out.println(this.homeTeamName + " day off");
+			this.status = Status.VIRTUAL;
+			return;
+		}
 		
 		matchEngine.play(this);
 		
