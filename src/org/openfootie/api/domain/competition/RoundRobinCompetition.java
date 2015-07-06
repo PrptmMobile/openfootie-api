@@ -199,11 +199,21 @@ public class RoundRobinCompetition extends Competition {
 		List<List<Integer>> pairsIndices = generatePairsIndices(scheduleGraph.representationList.size());
 		
 		for (int i = 0; i < numRounds; i++) {
-			rounds.add(generateRound(pairsIndices, scheduleGraph));
+			
+			RoundRobinRound currentRound = generateRound(pairsIndices, scheduleGraph);
+			
+			if (i % 2 > 0 && numRounds > 3) {
+				rounds.add(currentRound.reverse());
+			} else {
+				rounds.add(currentRound);
+			}
+			
 			scheduleGraph.rotate();
 		}
 		
-		rounds = balanceMatchHosts(rounds, this.participants);
+		if (numRounds <= 3) {
+			rounds = balanceMatchHosts(rounds, this.participants);
+		}
 		
 		// Get the other half of reverse rounds
 		List<RoundRobinRound> clausura = new ArrayList<RoundRobinRound>();

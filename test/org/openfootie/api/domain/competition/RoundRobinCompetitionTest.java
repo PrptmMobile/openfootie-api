@@ -21,6 +21,21 @@ public class RoundRobinCompetitionTest {
 	}
 	
 	@Test
+	public void testRoundRobinCompetition_3() {
+		this.roundRobinCompetition = 
+				new RoundRobinCompetition(environment.getTopRankableClubs(3), environment.getRankings().get(Environment.Ranking.CLUB_DEFAULT), environment.getClubMatches());
+		this.roundRobinCompetition.generateSchedule();
+		RoundRobinSchedule schedule = this.roundRobinCompetition.getSchedule();
+		
+		System.out.println("Fixtures");
+		System.out.println();
+		System.out.println(schedule);
+		
+		this.roundRobinCompetition.play();
+		this.roundRobinCompetition.display();
+	}
+	
+	@Test
 	public void testRoundRobinCompetition_4() {
 		this.roundRobinCompetition = 
 				new RoundRobinCompetition(environment.getTopRankableClubs(4), environment.getRankings().get(Environment.Ranking.CLUB_DEFAULT), environment.getClubMatches());
