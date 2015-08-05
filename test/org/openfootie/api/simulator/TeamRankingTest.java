@@ -30,6 +30,7 @@ public class TeamRankingTest {
 		nationRanking = environment.getRankings().get(Environment.Ranking.NATION_DEFAULT);
 	}
 	
+	/*
 	@Test
 	public void testQuantiles() {
 		
@@ -152,4 +153,5 @@ public class TeamRankingTest {
 		Rankable china = nationQuantiles.get(3).get(19);
 		assertEquals("China", china.getName());
 	}
+	*/
 }

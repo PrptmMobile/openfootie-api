@@ -1,225 +1,273 @@
 #
-{Germany,Ireland,1,1}
-{Poland,Germany,2,0}
-{Argentina,Croatia,2,1,neutral:true}
-{Argentina,Brazil,0,2,neutral:true}
-{Germany,Argentina,0,0,neutral:true}
-{Netherlands,Mexico,2,3}
-{Iceland,Netherlands,2,0}
-{USA,Colombia,1,2,neutral:true}
-{Colombia,El Salvador,3,0,neutral:true}
-{Brazil,Colombia,2,1}
-{Turkey,Brazil,0,4}
-{Japan,Brazil,0,4,neutral:true}
+{Germany,Australia,2,2}
+{Germany,USA,1,2}
+{Spain,Germany,0,1}
+{Germany,Scotland,2,1}
+{Germany,Argentina,2,4}
+{Argentina,Germany,0,0,neutral}
+{Brazil,Germany,1,7}
+{France,Germany,0,1,neutral}
+{Algeria,Germany,0,0,neutral}
+{USA,Germany,0,1,neutral}
+{Ghana,Germany,2,2,neutral}
+{Germany,Portugal,4,0,neutral}
+{Germany,Cameroon,2,2}
+{Germany,Chile,1,0}
+{England,Germany,0,1}
+{Italy,Germany,1,1}
+{Sweden,Germany,3,5}
+{Germany,Austria,3,0}
+{Chile,Argentina,0,0}
+{Argentina,Colombia,0,0,neutral}
+{Argentina,Ecuador,2,1,neutral}
+{Argentina,Portugal,0,1,neutral}
+{Argentina,Croatia,2,1,neutral}
+{Brazil,Argentina,2,0,neutral}
+{Netherlands,Argentina,0,0,neutral}
+{Argentina,Belgium,1,0,neutral}
+{Argentina,Switzerland,0,0,neutral}
+{Nigeria,Argentina,2,3,neutral}
+{Argentina,Iran,1,0,neutral}
+{Argentina,Bosnia-Herzegovina,2,1,neutral}
+{Romania,Argentina,0,0}
+{Argentina,Bosnia-Herzegovina,2,0,neutral}
+{Ecuador,Argentina,0,0,neutral}
+{Uruguay,Argentina,3,2}
+{Italy,Argentina,1,2}
+{Brazil,Colombia,0,1,neutral}
+{Brazil,Honduras,1,0}
+{Brazil,Mexico,2,0}
+{Brazil,Chile,1,0,neutral}
+{France,Brazil,1,3}
+{Austria,Brazil,1,2}
+{Japan,Brazil,0,4,neutral}
+{Brazil,Ecuador,1,0,neutral}
+{Brazil,Colombia,1,0,neutral}
 {Brazil,Netherlands,0,3}
-{Belgium,Iceland,3,1}
-{Bosnia-Herzegovina,Belgium,1,1}
-{France,Albania,1,1}
-{Armenia,France,0,3}
-{France,Germany,0,1,neutral:true}
-{Oman,Uruguay,0,3}
-{Uruguay,Costa Rica,3,3}
-{Colombia,Uruguay,2,0,neutral:true}
-{Chile,Bolivia,2,2}
-{Chile,Peru,3,0}
+{Brazil,Colombia,2,1}
 {Brazil,Chile,1,1}
-{South Korea,Costa Rica,1,3}
-{Oman,Costa Rica,3,4}
-{Guatemala,Costa Rica,1,2,neutral:true}
-{Mexico,Panama,1,0}
-{Mexico,Honduras,2,0}
-{Netherlands,Mexico,2,1,neutral:true}
-{Portugal,Armenia,1,0}
-{Denmark,Portugal,0,1}
-{Italy,Croatia,1,1}
-{Bulgaria,Croatia,0,1}
-{Norway,Italy,0,2}
+{Brazil,Cameroon,4,1}
+{Brazil,Mexico,0,0}
+{Brazil,Croatia,3,1}
+{Brazil,Chile,2,1,neutral}
+{Honduras,Brazil,0,5,neutral}
+{South Korea,Brazil,0,2}
+{Brazil,Portugal,3,1,neutral}
+{Brazil,Australia,6,0}
+{Switzerland,Brazil,1,0}
+{Netherlands,USA,3,4}
+{Netherlands,Spain,2,0}
+{Netherlands,Mexico,2,3}
+{Czech Republic,Netherlands,2,1}
 {Italy,Netherlands,2,0}
+{Netherlands,Costa Rica,0,0,neutral}
+{Netherlands,Mexico,2,1,neutral}
+{Netherlands,Chile,2,0,neutral}
+{Australia,Netherlands,2,3,neutral}
+{Spain,Netherlands,1,5,neutral}
+{Netherlands,Wales,2,0}
+{Netherlands,Ghana,1,0}
+{Netherlands,Ecuador,1,1}
+{France,Netherlands,2,0}
+{Netherlands,Colombia,0,0}
+{Netherlands,Japan,2,2,neutral}
+{Portugal,Netherlands,1,1}
+{Wales,Belgium,1,0}
+{France,Belgium,3,4}
+{Belgium,Wales,0,0}
+{Bosnia-Herzegovina,Belgium,1,1}
+{Belgium,Australia,2,0}
+{Belgium,USA,0,0,neutral}
+{South Korea,Belgium,0,1,neutral}
+{Belgium,Russia,1,0,neutral}
+{Belgium,Algeria,2,1,neutral}
+{Belgium,Tunisia,1,0}
+{Sweden,Belgium,0,2}
+{Belgium,Ivory Coast,2,2}
+{Belgium,Japan,2,3}
+{Belgium,Colombia,0,2}
+{Belgium,Wales,1,1}
+{Croatia,Belgium,1,2}
+{Scotland,Belgium,0,2}
+{Belgium,France,0,0}
+{Colombia,Costa Rica,1,0,neutral}
+{USA,Colombia,1,2,neutral}
+{Colombia,Uruguay,2,0,neutral}
+{Japan,Colombia,1,4,neutral}
+{Colombia,Ivory Coast,2,1,neutral}
+{Colombia,Greece,3,0,neutral}
+{Colombia,Tunisia,1,1,neutral}
+{Colombia,Chile,3,3}
+{Uruguay,Colombia,2,0}
+{Colombia,Ecuador,1,0}
+{Spain,Costa Rica,2,1}
+{Spain,Ukraine,1,0}
 {Slovakia,Spain,2,1}
 {France,Spain,1,0}
-{England,Slovenia,3,1}
-{Estonia,England,0,1}
-{Slovenia,Switzerland,1,0}
+{Australia,Spain,0,3,neutral}
+{Spain,Chile,0,2,neutral}
+{Spain,Italy,1,0}
+{Spain,Chile,2,2,neutral}
+{Ecuador,Spain,0,2}
+{France,Denmark,2,0}
+{France,Sweden,1,0}
+{France,Portugal,2,1}
+{France,Nigeria,2,0,neutral}
+{Ecuador,France,0,0,neutral}
+{Switzerland,France,2,5,neutral}
+{France,Honduras,3,0,neutral}
+{France,Ukraine,3,0}
+{Ukraine,France,2,0}
+{France,Australia,6,0}
+{Italy,Portugal,0,1,neutral}
+{Denmark,Portugal,0,1}
+{Portugal,Ghana,2,1,neutral}
+{USA,Portugal,2,2,neutral}
+{Mexico,Portugal,0,1,neutral}
+{Portugal,Greece,0,0}
+{Portugal,Cameroon,5,1}
+{Sweden,Portugal,2,3}
+{Portugal,Sweden,1,0}
+{Chile,Uruguay,1,0}
+{Chile,Mexico,3,3}
+{Chile,Ecuador,2,0}
+{Iran,Chile,2,0,neutral}
+{Chile,USA,3,2}
+{Chile,Uruguay,1,2}
+{Chile,Mexico,0,0,neutral}
+{Chile,Australia,3,1,neutral}
+{Chile,Costa Rica,4,0}
+{England,Chile,0,2}
+{Chile,Ecuador,2,1}
+{Uruguay,Costa Rica,3,3}
+{South Korea,Uruguay,0,1}
+{Japan,Uruguay,0,2}
+{Italy,Uruguay,0,1,neutral}
+{Uruguay,England,2,1,neutral}
+{Uruguay,Costa Rica,1,3,neutral}
+{Austria,Uruguay,1,1}
+{Ecuador,Uruguay,1,0}
+{Japan,Uruguay,2,4}
+{Mexico,Costa Rica,0,0,neutral}
+{Mexico,Costa Rica,2,2,neutral}
+{South Korea,Costa Rica,1,3}
+{Costa Rica,Greece,1,1,neutral}
+{Costa Rica,England,0,0,neutral}
+{Italy,Costa Rica,0,1,neutral}
+{Costa Rica,Japan,1,3,neutral}
+{Costa Rica,South Korea,0,1,neutral}
+{Australia,Costa Rica,1,0}
+{Costa Rica,Mexico,2,1}
+{Honduras,Costa Rica,1,0}
+{Costa Rica,USA,3,1}
+{Honduras,Costa Rica,1,0,neutral}
+{Switzerland,USA,1,1}
 {Switzerland,England,0,2}
+{Honduras,Switzerland,0,3,neutral}
+{Switzerland,Ecuador,2,1,neutral}
+{Switzerland,Croatia,2,2}
+{South Korea,Switzerland,2,1}
+{Italy,England,1,1}
+{Scotland,England,1,3}
+{England,Italy,1,2,neutral}
+{England,Honduras,0,0,neutral}
+{Ecuador,England,2,2,neutral}
+{England,Denmark,1,0}
+{Ukraine,England,0,0}
+{England,Scotland,3,2}
+{Mexico,Honduras,0,0}
+{Mexico,Ecuador,1,2,neutral}
+{USA,Mexico,2,0}
+{Mexico,Ecuador,1,0,neutral}
+{Mexico,Honduras,2,0}
+{Croatia,Mexico,1,3,neutral}
+{Mexico,Cameroon,1,0}
+{Mexico,Bosnia-Herzegovina,0,1,neutral}
+{Mexico,Ecuador,3,1,neutral}
+{USA,Mexico,2,2}
+{Mexico,Nigeria,0,0,neutral}
+{Mexico,South Korea,4,0,neutral}
+{USA,Mexico,2,0}
+{Mexico,Honduras,1,2}
+{Mexico,Ivory Coast,4,1,neutral}
+{Romania,Denmark,2,0}
+{Greece,Romania,0,1}
+{Algeria,Romania,2,1,neutral}
+{Romania,Greece,1,1}
+{Greece,Romania,3,1}
+{Romania,Slovakia,1,1}
+{Croatia,Italy,1,1}
+{Italy,Croatia,1,1}
+{Italy,Nigeria,2,2,neutral}
+{Denmark,Italy,2,2}
+{Italy,Czech Republic,2,1}
+{Greece,Ivory Coast,2,1,neutral}
+{Japan,Greece,0,0,neutral}
+{Greece,Nigeria,0,0,neutral}
+{Greece,South Korea,0,2}
+{Greece,Slovakia,1,0}
+{Austria,Greece,0,2}
+{Ivory Coast,Algeria,3,1,neutral}
+{Ghana,Algeria,1,0,neutral}
+{Tunisia,Algeria,1,1}
+{Algeria,Russia,1,1,neutral}
+{South Korea,Algeria,2,4,neutral}
+{USA,Honduras,2,1}
+{Denmark,USA,3,2}
 {USA,Honduras,1,1}
 {USA,Ecuador,1,1}
-{Belgium,USA,0,0,neutral:true}
-{Algeria,Mali,1,0}
-{Germany,Algeria,0,0,neutral:true}
-{Greece,Northern Ireland,0,2}
-{Finland,Greece,1,1}
-{El Salvador,Ecuador,1,5,neutral:true}
-{Brazil,Ecuador,1,0,neutral:true}
-{Ecuador,France,0,0,neutral:true}
-{Israel,Bosnia-Herzegovina,3,0}
-{Wales,Bosnia-Herzegovina,0,0}
-{South Africa,Nigeria,0,0}
-{Nigeria,Congo,2,3}
-{Ivory Coast,Sierra Leone,5,1}
-{Zambia,Ivory Coast,1,1}
-{Ghana,Guinea,3,1}
-{Guinea,Ghana,1,1,neutral:true}
-{Bosnia-Herzegovina,Iran,3,1,neutral:true}
-{Argentina,Iran,1,0,neutral:true}
-{Japan,Honduras,6,0}
-{Japan,Uruguay,0,2}
-{Japan,Colombia,1,4,neutral:true}
-{Cameroon,Sierra Leone,2,0}
-{Cameroon,Sierra Leone,0,0}
-{South Korea,Belgium,0,1,neutral:true}
-{South Korea,Algeria,2,4,neutral:true}
-{Austria,Russia,1,0}
-{Sweden,Russia,1,1}
-{Qatar,Australia,1,0}
-{UAE,Australia,0,0}
-{Australia,Spain,0,3,neutral:true}
-{Honduras,Guatemala,0,2,neutral:true}
-{Honduras,El Salvador,0,1,neutral:true}
-{Ukraine,Slovakia,0,1}
-{Ukraine,USA,2,0,neutral:true}
-{Czech Republic,Iceland,2,1}
-{Turkey,Czech Republic,1,2}
-{Romania,Northern Ireland,2,0}
-{Finland,Romania,0,2}
-{Montenegro,Sweden,1,1}
-{Austria,Sweden,1,1}
-{Russia,Slovakia,1,0}
-{Slovakia,Montenegro,2,0}
-{Serbia,Denmark,1,3}
-{Armenia,Serbia,1,1}
-{Iceland,Turkey,3,0}
-{Iceland,Estonia,1,0}
-{Paraguay,Peru,2,1}
-{Peru,Guatemala,1,0}
-{Peru,Bolivia,1,1}
-{Austria,Montenegro,1,0}
+{Czech Republic,USA,0,1}
+{Ghana,USA,1,2,neutral}
+{USA,Nigeria,2,1}
+{Ukraine,USA,2,0,neutral}
+{USA,South Korea,2,0}
+{Austria,USA,1,0}
+{Scotland,USA,0,0}
+{Bosnia-Herzegovina,USA,3,4}
+{USA,Honduras,3,1}
+{Cameroon,Croatia,0,4,neutral}
+{Croatia,Australia,1,0,neutral}
+{Scotland,Croatia,2,0}
+{South Korea,Croatia,1,2}
+{Nigeria,Ivory Coast,0,1,neutral}
+{Nigeria,Bosnia-Herzegovina,1,0,neutral}
+{Iran,Nigeria,0,0,neutral}
+{Nigeria,Scotland,2,2,neutral}
+{Nigeria,Ghana,0,0,neutral}
+{Ivory Coast,Nigeria,2,0}
+{Honduras,Ecuador,1,2,neutral}
+{Australia,Ecuador,3,4,neutral}
+{Honduras,Ecuador,2,2,neutral}
+{Slovakia,Czech Republic,1,0}
 {Czech Republic,Austria,1,2}
-{Albania,Denmark,1,1}
-{Denmark,Armenia,2,1}
-{Estonia,Slovenia,1,0}
-{Argentina,Slovenia,2,0}
-{Scotland,Ireland,1,0}
-{Poland,Scotland,2,2}
-{El Salvador,Panama,1,3}
-{Mexico,Panama,1,0}
-{El Salvador,Panama,0,1,neutral:true}
-{Egypt,Senegal,0,1}
-{Egypt,Tunisia,0,1}
-{Germany,Poland,0,0}
-{Poland,Scotland,0,1}
-{England,Poland,2,0}
-{Tunisia,Senegal,1,0}
-{Senegal,Tunisia,0,0}
-{Denmark,Turkey,1,2}
-{USA,Turkey,2,1}
-{Turkey,Netherlands,0,2}
-{Honduras,Israel,2,4,neutral:true}
-{Mexico,Israel,3,0}
-{Israel,Northern Ireland,1,1}
-{Hungary,Finland,1,0}
-{Romania,Hungary,1,1}
-{South Africa,Congo,0,0}
-{Congo,South Africa,0,2}
-{Norway,Bulgaria,2,1}
-{Bulgaria,Czech Republic,0,1}
-{Ireland,Oman,2,0}
-{Ireland,Portugal,1,5,neutral:true}
-{Germany,Ireland,3,0}
-{Chile,Venezuela,5,0}
-{Japan,Venezuela,3,0}
-{Venezuela,Paraguay,1,1}
-{Slovakia,Finland,2,1}
-{Estonia,Finland,0,2,neutral:true}
-{China,Paraguay,2,1}
-{South Korea,Paraguay,2,0}
-{Paraguay,Colombia,1,2}
-{UAE,Uzbekistan,0,4}
-{Qatar,Uzbekistan,3,0}
-{Uzbekistan,UAE,1,1}
-{UAE,Oman,0,0,neutral:true}
-{Paraguay,UAE,0,0,neutral:true}
-{Norway,Estonia,0,1}
-{England,Norway,1,0}
-{Norway,Iceland,1,1}
-{China,New Zealand,1,1}
-{Uzbekistan,New Zealand,3,1}
-{New Zealand,Mexico,2,4}
-{Qatar,North Korea,3,1}
-{Iraq,North Korea,2,0,neutral:true}
-{North Korea,Australia,1,1,neutral:true}
-{Bolivia,Mexico,0,1,neutral:true}
-{Bolivia,Ecuador,0,4,neutral:true}
-{Bolivia,Ecuador,1,1}
-{Belgium,Tunisia,1,0}
+{Ukraine,Slovakia,0,1}
+{Russia,Slovakia,1,0}
+{Slovakia,Bosnia-Herzegovina,1,2}
+{Bosnia-Herzegovina,Slovakia,0,1}
+{Sweden,Iran,3,1}
+{Sweden,Ivory Coast,2,0,neutral}
+{Sweden,Russia,1,1}
+{Austria,Russia,1,1}
+{Denmark,Sweden,1,0}
+{Sweden,Austria,2,1}
+{Ivory Coast,Ghana,0,0,neutral}
+{Cameroon,Ivory Coast,0,1,neutral}
+{Ivory Coast,Cameroon,0,0}
+{Cameroon,Ivory Coast,4,1}
+{Ivory Coast,Japan,2,1,neutral}
+{Japan,Tunisia,2,0}
+{Japan,Australia,2,1}
+{Japan,Honduras,6,0}
+{Japan,Ghana,3,1}
+{South Korea,Japan,1,2}
+{Japan,Australia,3,2,neutral}
+{Russia,Austria,0,1}
+{Austria,Russia,1,0}
+{Russia,South Korea,1,1,neutral}
+{Russia,South Korea,2,1,neutral}
+{Ghana,South Korea,4,0,neutral}
+{Australia,South Korea,0,1}
+{Iran,South Korea,1,0}
 {South Korea,Tunisia,0,1}
 {Cameroon,Tunisia,4,1}
-{Cape Verde Islands,Zambia,2,1}
-{Tunisia,Cape Verde Islands,3,0}
-{Belgium,Wales,0,0}
-{Netherlands,Wales,2,0}
-{Trinidad and Tobago,Dominican Republic,6,1}
-{Trinidad and Tobago,Iran,0,2,neutral:true}
-{Togo,Guinea,1,4}
-{Togo,Uganda,1,0}
-{Hungary,Northern Ireland,1,2}
-{Chile,Northern Ireland,2,0}
-{Italy,Albania,1,0}
-{Portugal,Albania,0,1}
-{Uganda,Guinea,2,0}
-{Guinea,Togo,2,1,neutral:true}
-{Angola,Gabon,0,0}
-{Angola,Burkina Faso,0,3}
-{China,Mali,1,3}
-{Croatia,Mali,2,1}
-{South Africa,Mali,1,1}
-{Cameroon,Congo DR,1,0}
-{Ivory Coast,Congo DR,3,4}
-{Congo,Nigeria,0,2}
-{Congo,Libya,0,0,neutral:true}
-{Montenegro,Iran,0,0,neutral:true}
-{Montenegro,Ghana,1,0}
-{England,Montenegro,4,1}
-{Burkina Faso,Gabon,1,1}
-{Gabon,Burkina Faso,2,0}
-{Trinidad and Tobago,Antigua and Barbuda,1,0}
-{Dominican Republic,Antigua and Barbuda,0,0,neutral:true}
-{Burkina Faso,Angola,1,1}
-{Burkina Faso,Senegal,1,1}
-{Guatemala,Costa Rica,1,2,neutral:true}
-{El Salvador,Guatemala,1,2,neutral:true}
-{Morocco,Libya,3,0}
-{Libya,Ghana,0,0,neutral:true}
-{Estonia,Jordan,1,0}
-{Jordan,South Korea,0,1}
-{Oman,Jordan,0,0}
-{Germany,Armenia,6,1}
-{Algeria,Armenia,3,1,neutral:true}
-{Italy,Armenia,2,2}
-{Congo DR,Sierra Leone,3,1}
-{Congo DR,Sierra Leone,2,0}
-{Zambia,Cape Verde Islands,1,0}
-{Japan,Zambia,4,3,neutral:true}
-{Antigua and Barbuda,Dominican Republic,2,1}
-{El Salvador,Dominican Republic,2,0}
-{UAE,Iraq,2,0,neutral:true}
-{Iraq,Oman,1,1,neutral:true}
-{El Salvador,Panama,0,1,neutral:true}
-{El Salvador,Spain,0,2,neutral:true}
-{Oman,Qatar,1,3,neutral:true}
-{Uzbekistan,Oman,0,1}
-{Guinea,Uganda,2,0,neutral:true}
-{Uganda,Ghana,1,0}
-{Morocco,Benin,6,1}
-{Mali,Benin,2,2}
-{Sweden,Estonia,2,0}
-{Romania,Estonia,2,0}
-{China,Honduras,0,0}
-{China,Jordan,1,1}
-{Iraq,China,3,1,neutral:true}
-{Morocco,Qatar,0,0}
-{Russia,Morocco,2,0}
-{Nigeria,Morocco,3,3,neutral:true}
-{Saudi Arabia,Qatar,1,1}
-{Qatar,Peru,0,2}
-{Saudi Arabia,UAE,3,2}
-{Saudi Arabia,Uruguay,1,1}
+{Tunisia,Cameroon,0,0}

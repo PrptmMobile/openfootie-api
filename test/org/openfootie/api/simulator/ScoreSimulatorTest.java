@@ -25,6 +25,7 @@ public class ScoreSimulatorTest {
 		this.nationScoreSimulator = new ScoreSimulator(environment.getRankings().get(Environment.Ranking.NATION_DEFAULT), environment.getNationMatches());
 	}
 	
+	/*
 	@Test
 	public void testClubMatchCalculationNeutral() {
 		
@@ -43,6 +44,7 @@ public class ScoreSimulatorTest {
 		System.out.println("Quantiles: " + finalQuantiles);
 		
 	}
+	*/
 	
 	@Test
 	public void testNationMatchCalculationNeutral() {
@@ -81,6 +83,7 @@ public class ScoreSimulatorTest {
 		System.out.println("Quantiles: " + finalQuantiles);
 	}
 	
+	/*
 	@Test
 	public void testNationMatchCalculation() {
 		
@@ -97,7 +100,7 @@ public class ScoreSimulatorTest {
 		
 		int finalQuantiles = quantiles - 1;
 		System.out.println("Quantiles: " + finalQuantiles);
-		
 	}
+	*/
 
 }

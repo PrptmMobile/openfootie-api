@@ -10,6 +10,7 @@ import org.openfootie.api.domain.Nation;
 import org.openfootie.api.simulator.TeamRanking;
 import org.openfootie.resources.DataResources;
 
+@Deprecated
 public class EnvironmentTest {
 	
 	private static Environment environment;
@@ -23,6 +24,7 @@ public class EnvironmentTest {
 				DataResources.ROOT + "/results_teams.sjon");
 	}
 	
+	/*
 	@Test
 	public void testNationLoad() {
 		assertEquals("South Korea", environment.getNations().get(28).getName());
@@ -163,4 +165,5 @@ public class EnvironmentTest {
 		assertEquals("PSV", psv.getName());
 		assertEquals("Benfica", benfica.getName());
 	}
+	*/
 }

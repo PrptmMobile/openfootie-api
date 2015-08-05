@@ -1,77 +1,69 @@
 #Ranking, Name, Nation, value, nativeName, fullName
 {1,Real Madrid,Spain}
 {2,Barcelona,Spain}
-{3,Bayern,Germany,nativeName:Bayern München,fullName:Bayern Munich}
+{3,Bayern,Germany}
 {4,Chelsea,England}
-{5,Benfica,Portugal}
-{6,Manchester United,England}
-{7,Atletico Madrid,Spain}
-{8,Valencia,Spain}
+{5,Atletico Madrid,Spain}
+{6,Benfica,Portugal}
+{7,Schalke,Germany}
+{8,Porto,Portugal}
 {9,Arsenal,England}
-{10,Porto,Portugal}
-{11,Milan,Italy}
-{12,Lyon,France}
-{13,Inter Milan,Italy}
-{14,Schalke,Germany}
-{15,Dortmund,Germany,fullName:Borussia Dortmund}
-{16,Juventus,Italy}
-{17,PSG,France} 
+{10,Manchester United,England}
+{11,PSG,France}
+{12,Valencia,Spain}
+{13,Dortmund,Germany}
+{14,Juventus,Italy}
+{15,Zenit,Russia}
+{16,Leverkusen,Germany}
+{17,Manchester City,England}
 {18,Shakhtar Donetsk,Ukraine}
-{19,Tottenham,England}
-{20,Basel,Switzerland}
-{21,Zenit,Russia} 
-{22,Manchester City,England} 
-{23,Seville,Spain,nativeName:Sevilla} 
-{24,Leverkusen,Germany,fullName:Bayer Leverkusen} 	
-{25,Marseille,France} 
-{26,Rubin Kazan,Russia} 
-{27,Olympiakos,Greece} 
-{28,CSKA Moscow,Russia,nativeName:CSKA Moskva} 
-{29,PSV,Netherlands,fullName:PSV Eindhoven} 
-{30,Ajax,Netherlands} 
-{31,Napoli,Italy} 
-{32,Liverpool,England} 
-{33,Sporting,Portugal} 
-{34,Dynamo Kiev,Ukraine,nativeName:Dynamo Kyiv} 
-{35,AZ,Netherlands} 
-{36,Galatasaray,Turkey} 
-{37,Athletic Club,Spain} 
-{38,Stuttgart,Germany} 
-{39,Villarreal,Spain} 
-{40,Braga,Portugal}  
-{41,Lazio,Italy} 
-{42,Bordeaux,France} 
-{43,Twente,Netherlands} 
-{44,Anderlecht,Belgium} 
-{45,Fiorentina,Italy} 
-{46,Salzburg,Austria} 
-{47,Fulham,England} 
-{48,Metalist Kharkiv,Ukraine} 
-{49,Lille,France} 
-{50,Copenhagen,Denmark,nativeName:København} 
-{51,Hannover,Germany} 
-{52,Malaga,Spain} 
-{53,Fenerbahce,Turkey} 
-{54,Viktoria Plzen,Czech Republic,nativeName:Viktoria Plzeň} 
-{55,Roma,Italy,value:216.83} 
-{56,Wolfsburg,Germany,value:152.20} 
-{57,Monaco,France,value:117.70} 
-{58,Newcastle,England,value:111.10} 
-{59,Spartak Moscow,Russia,value:103.80,nativeName:Spartak Moskva} 
-{60,Besiktas,Turkey,value:84.48} 
-{61,Dnipro Dnipropetrovsk,Ukraine,value:72.07} 
-{62,Hamburger,Germany,value:69.52} 
-{63,Celtic,Scotland,value:51.99} 
-{64,Standard Liege,Belgium,value:45.89,nativeName:Standard de Liège} 
-{65,Werder Bremen,Germany,value:45.28} 
-{66,Club Brugge,Belgium,value:41.76} 
-{67,Levante,Spain,value:38.28} 
-{68,Steaua Bucharest,Romania,value:37.75,nativeName:Steaua Bucureşti} 
-{69,Ludogorets,Bulgaria,value:36.52}
-{70,Genk,Belgium,value:34.19}
-{71,Real Betis,Spain,value:31.50} 
-{72,PAOK,Greece,value:27.54} 
-{73,APOEL,Cyprus,value:16.41} 
-{74,BATE,Belarus,value:15.93} 
-{75,Maribor,Slovenia,value:12.74}
-{76,Malmo,Sweden,value:10.76,nativeName:Malmö}
+{19,Basel,Switzerland}
+{20,Napoli,Italy}
+{21,Tottenham,England}
+{22,Milan,Italy}
+{23,Sevilla,Spain}
+{24,Inter Milan,Italy}
+{25,Lyon,France}
+{26,Ajax,Netherlands}
+{27,Dynamo Kiev,Ukraine}
+{28,Olympiakos,Greece}
+{29,Villarreal,Spain}
+{30,PSV,Netherlands}
+{31,Rubin Kazan,Russia}
+{32,Athletic Bilbao,Spain}
+{33,Sporting,Portugal}
+{34,CSKA Moscow,Russia}
+{35,Marseille,France}
+{36,Dnipro Dnipropetrovsk,Ukraine}
+{37,Braga,Portugal}
+{38,Galatasaray,Turkey}
+{39,Fiorentina,Italy}
+{40,Lazio,Italy}
+{41,Anderlecht,Belgium}
+{42,Liverpool,England}
+{43,Metalist Kharkiv,Ukraine}
+{44,AZ,Netherlands}
+{45,Twente,Netherlands}
+{46,Roma,Italy}
+{47,Salzburg,Austria}
+{48,Malaga,Spain}
+{49,Hannover,Germany}
+{50,Viktoria Plzen,Czech Republic}
+{51,Club Brugge,Belgium}
+{52,Copenhagen,Denmark}
+{53,PAOK,Greece}
+{54,Steaua,Romania}
+{55,Celtic,Scotland}
+{56,Spartak Moscow,Russia}
+{57,Genk,Belgium}
+{58,Besiktas,Turkey}
+{59,Trabzonspor,Turkey}
+{60,Lille,France}
+{61,Stuttgart,Germany}
+{62,APOEL,Cyprus}
+{63,BATE,Belarus}
+{64,Gladbach,Germany}
+{65,Levante,Spain}
+{66,Real Betis,Spain}
+{67,Wolfsburg,Germany}
+{68,Monaco,France}
