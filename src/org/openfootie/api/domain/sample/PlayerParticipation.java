@@ -17,4 +17,12 @@ public class PlayerParticipation {
 	public static PlayerParticipation createPlayerParticipation(ListItem li) {
 		return new PlayerParticipation(li.getListContent().get(0).getLiteral(), Double.parseDouble(li.getListContent().get(1).getLiteral()));
 	}
+
+	public String getPlayer() {
+		return player;
+	}
+
+	public double getDuration() {
+		return duration;
+	}
 }

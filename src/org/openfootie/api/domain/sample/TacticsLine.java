@@ -27,4 +27,12 @@ public class TacticsLine {
 		
 		return new TacticsLine(players);
 	}
+	
+	public List<Object> getPlayers() {
+		return this.players;
+	}
+	
+	public int getCardinality() {
+		return this.players.size();
+	}
 }

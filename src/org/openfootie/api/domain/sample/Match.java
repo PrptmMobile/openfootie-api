@@ -75,5 +75,37 @@ public class Match {
 		this.awayLineup = builder.awayLineup;
 		this.neutralVenue = builder.neutralVenue;
 	}
+
+	public String getHomeTeam() {
+		return homeTeam;
+	}
+
+	public String getAwayTeam() {
+		return awayTeam;
+	}
+
+	public int getHomeScore() {
+		return homeScore;
+	}
+
+	public int getAwayScore() {
+		return awayScore;
+	}
+
+	public Date getMatchDate() {
+		return matchDate;
+	}
+
+	public Lineup getHomeLineup() {
+		return homeLineup;
+	}
+
+	public Lineup getAwayLineup() {
+		return awayLineup;
+	}
+
+	public boolean isNeutralVenue() {
+		return neutralVenue;
+	}
 	
 }

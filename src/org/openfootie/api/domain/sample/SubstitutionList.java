@@ -23,4 +23,8 @@ public class SubstitutionList {
 		
 		return new SubstitutionList(subs);
 	}
+	
+	public int getCardinality() {
+		return this.subs.size();
+	}
 }

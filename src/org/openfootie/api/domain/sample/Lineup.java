@@ -53,5 +53,25 @@ public class Lineup {
 		}
 		
 		return new Lineup(goalkeeper, defenders, midfielders, forwards, subs);
+	}
+
+	public Object getGoalkeeper() {
+		return goalkeeper;
+	}
+
+	public TacticsLine getDefenders() {
+		return defenders;
+	}
+
+	public TacticsLine getMidfielders() {
+		return midfielders;
+	}
+
+	public TacticsLine getForwards() {
+		return forwards;
+	}
+
+	public SubstitutionList getSubs() {
+		return subs;
 	}	
 }
