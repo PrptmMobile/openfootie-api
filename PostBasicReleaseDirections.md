@@ -78,6 +78,10 @@ Apart from the issue of user-defined competitions already mentioned, in the mean
 
 ## Customization
 
-The only customization that an end-user could do right now is tweak the ranking of teams. (The changing of the sample scores is not counted as pure "end-user" activity). It's not hard, but it would also be better to write some documentation on how to change the ranking (and also where the default ranking(s) came from), and/or facilitate the user to perform this kind of change with a utility, and/or provide a utility that generates teams' rankings based on various parameters (more interesting that last one)
+The only customization that an end-user could do right now is tweak the ranking of teams. (The changing of the sample scores is not counted as pure "end-user" activity). It's not hard, but it would also be better to write some documentation on how to change the ranking (and also where the default ranking(s) came from), and/or facilitate the user to perform this kind of change with a utility, and/or provide a utility that generates teams' rankings based on various parameters (more interesting that last one).
+
+## Persistence
+
+Finally, maybe a trivial feature for the time being, but useful for the future, as the outputs (and inputs) to the match engine will become more complex is the capability of saving outputs as historical data.
 
 
