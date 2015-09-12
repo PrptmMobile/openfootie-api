@@ -1,4 +1,3 @@
-# openfootie-api future directions
 
 # Introduction
 
